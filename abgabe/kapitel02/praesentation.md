@@ -603,7 +603,7 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
 
 ---
 
-# Horizontale Skalierung vs vertikale Skalierung
+## Horizontale Skalierung vs vertikale Skalierung
 
 ### Horizontale Skalierung
 
@@ -623,18 +623,18 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
 
 ---
 
-# Welche Skalierung?
+## Welche Skalierung?
 
 Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von verschiedenen Faktoren ab:
 
-## Horizontale Skalierung
+### Horizontale Skalierung
 
 - Minimiert Ausfallmöglichkeiten.
 - Verbessert die Gesamtleistung durch Hinzufügen von Computern.
 - Bietet hohe Zuverlässigkeit.
 - Geeignet für Anwendungen mit nationaler oder internationaler Kundschaft.
 
-## Vertikale Skalierung
+### Vertikale Skalierung
 
 - Sinnvoll bei ausreichenden Ressourcen auf einem einzelnen System.
 - Schnelle und kostengünstige Erweiterung der Infrastruktur.
@@ -683,7 +683,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 - Geeignet für Abfragen, die oft in Gruppen zusammengefasste Teilzeilen zurückgeben, z.B. Datumsfilter.
 
 ---
-# Sharding: Skalierbarkeit und Leistungssteigerung
+## Sharding: Skalierbarkeit und Leistungssteigerung
 
 ### Vertikales Sharding
 
@@ -705,13 +705,13 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 # Load Balancing: Optimierung von Leistung und Verfügbarkeit
 
-## Was ist Load Balancing?
+### Was ist Load Balancing?
 
 - Technik zur Optimierung der Leistung und Verfügbarkeit von Webservern und IT-Ressourcen.
 - Verteilt eingehenden Online-Traffic gleichmäßig auf mehrere Server oder Ressourcen.
 - Reduziert Serverauslastung, erhöht Zugriffsgeschwindigkeit und sichert Verfügbarkeit.
 
-## Load Balancer
+### Load Balancer
 
 - Analysiert Benutzeranfragen und leitet sie an am besten geeignete Server weiter.
 - Verwendet Algorithmen wie Round Robin, Weighted Round Robin, Least Connections und Weighted Least Connections.
@@ -726,7 +726,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 ---
 
-# Load Balancing Algorithmen
+## Load Balancing Algorithmen
 
 ### Statisches Load Balancing
 
@@ -747,7 +747,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 ---
 
-# Caching: Steigerung der Leistung und Effizienz
+## Caching: Steigerung der Leistung und Effizienz
 
 ### Was ist Caching?
 
@@ -778,7 +778,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 ---
 
-# Cache-Arten: Local, Distributed, Hierarchical
+## Cache-Arten: Local, Distributed, Hierarchical
 
 ### Lokaler Cache
 
