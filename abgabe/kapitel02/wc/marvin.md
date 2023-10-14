@@ -345,5 +345,5 @@
     * Skalierungswürfel
     Der Skalierungswürfel ist eine Visualisierung eines dreidimensionalen Skalierbarkeitsmodells, das im Buch "The Art of Scalability" beschrieben wird. Es definiert drei Möglichkeiten zur Skalierung einer Anwendung: X-Achse, Y-Achse und Z-Achse. Die X-Achsen-Skalierung verteilt die Last auf mehrere Instanzen, die Z-Achsen-Skalierung teilt Daten auf identische Instanzen auf und leitet Anfragen basierend auf Anfrageattributen weiter. Die Y-Achsen-Skalierung hingegen zerlegt die Anwendung in Dienste, wodurch eine monolithische Anwendung in unabhängige, skalierbare Microservices aufgeteilt wird. Dies ermöglicht eine bessere Beherrschung von Komplexität und verbesserte Skalierbarkeit.
     [17]
-    Karan Sharma o.V. The Scale Cube (11.07.2023)
+    Karan Sharma The Scale Cube (11.07.2023)
     https://cserkaran.medium.com/the-scale-cube-d84ca0c2e900 (13.10.2023)
