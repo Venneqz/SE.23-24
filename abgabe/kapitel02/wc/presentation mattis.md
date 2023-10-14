@@ -187,7 +187,6 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 ---
 
 # Systemarchitektur verteilter Softwaresysteme
----
 
 1. Visualisierung von Systemarchitekturen
 1. Systemarchitekturmuster
