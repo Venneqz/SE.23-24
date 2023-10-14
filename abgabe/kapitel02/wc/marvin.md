@@ -197,6 +197,14 @@
       API Gateway:
       Ein API-Gateway ist ein essenzieller Bestandteil einer Microservices-Architektur. Es dient als zentraler Koordinator für alle Client-Anfragen an die Backend-Dienste. Dies ermöglicht zentralisierte Authentifizierung und Autorisierung, Ratenbegrenzungen, Anpassung von Anfragen und Antworten sowie eine umfassende Überwachung und Protokollierung. Beispiele wie Netflix setzen erfolgreich auf API-Gateways, um komplexe Microservices-Systeme zu verwalten und eine skalierbare, sichere und flexible Lösung für Millionen täglicher API-Aufrufe bereitzustellen. Insgesamt sind API-Gateways unverzichtbare Werkzeuge zur effizienten Verwaltung und Absicherung von APIs in modernen Anwendungen.
 
+      Proxy:
+      Ein Proxy ist eine Zwischeninstanz oder Vermittler, der als Schnittstelle zwischen einem Client und einem Server fungiert. Er empfängt Anfragen vom Client und leitet sie an den Zielserver weiter. Proxies werden häufig eingesetzt, um den Datenverkehr zu steuern, zu überwachen, zu sichern und zu optimieren. Sie ermöglichen es, den Zugriff auf Ressourcen zu kontrollieren, die Privatsphäre zu schützen und die Performance zu optimieren. Im Systemdesign dienen Proxies dazu, Netzwerksicherheit, Zugriffskontrolle und die Verbesserung der Systemleistung zu ermöglichen.
+      [4] ChatGPT
+
+
+
+
+
       Reverse Proxy:
       Ein Reverse-Proxy ist eine entscheidende Komponente in modernen Webarchitekturen, die auf der Anwendungsschicht (Layer 7) des OSI-Modells operiert. Er bietet zahlreiche Vorteile, darunter verbesserte Leistung, Sicherheit und Wartbarkeit für Webanwendungen. Reverse-Proxys können Aufgaben wie SSL-Terminierung und Inhaltskomprimierung übernehmen, wodurch die Serverentlastung und die Anwendungsleistung gesteigert werden. Sie dienen auch als Sicherheitsschutzschild, indem sie den eingehenden Datenverkehr filtern und bösartige Anfragen abwehren. Darüber hinaus vereinfachen sie die Verwaltung und Skalierung von Servern, was die Wartbarkeit der Anwendung verbessert. Plattformen wie GitHub verlassen sich auf Reverse-Proxys, um effiziente und leistungsstarke Webdienste bereitzustellen. Insgesamt sind Reverse-Proxys unverzichtbar, um Webanwendungen sicherer, leistungsfähiger und leichter wartbar zu machen.
 
@@ -213,6 +221,8 @@
       Load Balancer priorisieren die Verbesserung der Leistung, Verfügbarkeit und Fehlertoleranz, indem sie Anfragen gleichmäßig auf mehrere Backend-Server verteilen und arbeiten hauptsächlich auf Netzwerkebene. Sie sind die Wahl, wenn die Hauptanforderung die Lastverteilung ist.
 
       Reverse Proxys operieren auf der Anwendungsebene und bieten Zusatzfunktionen wie URL-Umschreiben, Inhaltskomprimierung und Zugriffskontrolle. Sie sind nützlich, wenn erweiterte Anwendungsebenenfunktionen erforderlich sind, um die Sicherheit und Wartbarkeit zu verbessern.
+
+      Proxies sind Vermittler zwischen Client und Server. Ihre Funktionen variieren, einschließlich Sicherheitsaspekte wie Zugriffskontrolle. Der Schwerpunkt liegt auf Datenverkehrssteuerung und Sicherheit.
 
       API-Gateways sind ideal für Microservices-Architekturen, in denen verschiedene APIs zentrale Verwaltung, Sicherheit und Skalierbarkeit benötigen. Im Gegensatz zu Load Balancern und Reverse Proxys bieten sie erweiterte Funktionen wie Authentifizierung, Ratenbegrenzung, Anfrage-/Antworttransformation und Überwachung. Wenn Ihre Anwendung stark von APIs abhängt, ist ein API-Gateway eine wertvolle Ergänzung für das Management und die Sicherheit Ihrer Schnittstellen.
 
