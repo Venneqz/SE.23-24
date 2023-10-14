@@ -55,7 +55,7 @@
       Lose gekoppelt heißt in diesem Zusammenhang, dass Prozessoren standortbezogen von einander getrennt sind.
       
       In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Dinge wie Drucker, Dateien und Speicher zugreifen. Das hilft, die Dinge effizienter zu nutzen und spart Ressourcen.
-      
+      [1]
       ---
       
       # Eigenschaften
@@ -79,7 +79,7 @@
       1. Transparenz
       
          - Kommunikation und Zugriff zwischen den Systemknoten.
-      
+      [2]
       
       ---
       
@@ -92,7 +92,7 @@
       - **Fehlertoleranz:** Umschalten auf alternative Ressourcen bei Hardware- oder Softwareausfällen.
       - **Benutzerfreundlichkeit:** Nutzung ohne vertiefte Kenntnisse der Verteilung.
       - **Kosteneffizienz:** Niedrigere Gesamtkosten in kleineren verteilten Systemen.
-      
+      [3][4]
       
       ---
       
@@ -107,39 +107,39 @@
       - **Skalierbarkeitsprobleme:** Unzureichende Skalierbarkeitsplanung kann Probleme verursachen.
       
         *Trotzdem dieser Nachteile sind verteilte Systeme in vielen Fällen unverzichtbar, da sie Flexibilität, Ressourcennutzung und Skalierbarkeit bieten. Mit sorgfältiger Planung und Sicherheitsmaßnahmen können die Nachteile minimiert werden.*
-      
+      [3][4]
       ---
       
-      # Motivation (Warum man Verteilung braucht):
+      ## Motivation (Warum man Verteilung braucht):
       
-      ## Mangelnde Möglichkeiten der Zentralrechner
+      ### Mangelnde Möglichkeiten der Zentralrechner
       - Verbesserte Antwortzeiten durch Lastverteilung.
       - Effizientere Ausführung interaktiver Anwendungen.
       - Unterstützung komplexer Benutzerschnittstellen und Grafiken.
       
-      ## Anforderungen neuer Anwendungen
+      ### Anforderungen neuer Anwendungen
       - Grafische Benutzerschnittstellen für moderne Anwendungen.
       - Bewältigung von Lastspitzen für kurze Antwortzeiten.
       
-      ## Weite Verbreitung mächtiger PCs und Workstations
+      ### Weite Verbreitung mächtiger PCs und Workstations
       - Effiziente Ausführung anspruchsvoller Anwendungen.
       - Bereitstellung von Rechenleistung und Speicherressourcen.
-      
+      [5]
       ---
       
-      # Motivation (Warum man Verteilung braucht):
+      ## Motivation (Warum man Verteilung braucht):
       
-      ## Fortgeschrittene Netztechnologien
+      ### Fortgeschrittene Netztechnologien
       - Kommunikation und Koordination über verschiedene Entfernungen.
       - Skalierbarkeit und Flexibilität des Systems.
       
-      ## Gemeinsame Nutzung von Ressourcen
+      ### Gemeinsame Nutzung von Ressourcen
       - Effiziente Ressourcennutzung und Kostenersparnis.
       
-      ## Geringere Hardware-Kosten
+      ### Geringere Hardware-Kosten
       - Effiziente Nutzung vorhandener Hardware.
       - Realisierung von Skaleneffekten.
-      
+      [5]
       ---
       
       # Distributed vs decentralized
@@ -155,7 +155,7 @@
       - Koordination kann zentral oder begrenzt sein.
       - Verteilung von Ressourcen über Knoten.
       - Beispiel: CDNs - Datenverteilung mit zentraler Steuerung.
-      
+      [4]
       ---
       
       ## Widerstandsfähigkeit
@@ -167,7 +167,7 @@
       ### Verteilte Systeme
       - Widerstandsfähigkeit hängt von der Architektur ab.
       - Beispiel: Cloud-Plattformen - Robustheit durch Verteilung.
-      
+      [4]
       ---
       
       ## Skalierbarkeit
@@ -179,7 +179,7 @@
       ### Verteilte Systeme
       - Bessere Skalierbarkeit durch Ressourcenverteilung.
       - Beispiel: Cloud-Computing.
-      
+      [4]
       ---
       
       ## Datenkonsistenz
@@ -191,7 +191,7 @@
       ### Verteilte Systeme
       - Einfachere Konsistenz dank zentraler Koordination.
       - Beispiel: Zentrale Unternehmensdatenbanken.
-      
+      [4]
       ---
       
       # Concurrent vs parallel
@@ -207,7 +207,7 @@
       - Bezieht sich auf die tatsächliche gleichzeitige Ausführung von Aufgaben oder Prozessen auf verschiedenen Knoten oder Systemen.
       - Erfordert eine explizite Koordination zwischen den Knoten.
       - Aufteilung einer Aufgabe in Teilaufgaben und parallele Ausführung mit Synchronisation für kohärente Ergebnisse.
-      
+      [4]
       ---
       
       ## Beispiel: Echtzeittransaktionsverarbeitung
@@ -217,7 +217,7 @@
       - Parallel: In Spitzenzeiten arbeiten separate Server in verschiedenen Rechenzentren parallel, um Bestellungen zu verarbeiten. Echtzeit-Synchronisation gewährleistet kohärente Ergebnisse.
       
       In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel wichtig, da sie Auswirkungen auf Skalierbarkeit, Leistung und Synchronisation haben kann. Concurrent Computing bietet Flexibilität, während Parallel Computing zusätzliche Koordination erfordert, um kohärente Ergebnisse sicherzustellen.
-      
+      [4]
       ---
       
       # Systemarchitektur verteilter Softwaresysteme
@@ -473,11 +473,11 @@
       # Systemdesign Definition
       
       **Beim Systemdesign werden die Elemente eines Systems wie Architektur, Module und Komponenten, die verschiedenen Schnittstellen dieser Komponenten und die Daten, die das System durchlaufen, definiert. Es soll die spezifischen Bedürfnisse und Anforderungen eines Unternehmens oder einer Organisation durch die Entwicklung eines kohärenten und gut funktionierenden Systems erfüllen.**
-      
+      [7]
       
       ---
       
-      # API Gateway
+      ### API Gateway
       
       - **Definition**
         - Ein essenzieller Bestandteil in Microservices-Architekturen.
@@ -496,7 +496,7 @@
       
       - **Wichtigkeit**
         - Unverzichtbare Werkzeuge zur effizienten Verwaltung und Absicherung von APIs in modernen Anwendungen.
-      
+      [6]
       ---
       
       # Proxy
@@ -510,6 +510,7 @@
         - Überwachung: Sie ermöglichen die Überwachung des Datenverkehrs und bieten Einblicke in die Kommunikation zwischen Client und Server.
         - Sicherheit: Proxies dienen der Sicherung des Datenverkehrs und dem Schutz vor Bedrohungen.
         - Performance-Optimierung: Sie optimieren die Leistung durch Funktionen wie Caching und Komprimierung.
+      [4]
       ---
       # Proxy
       
@@ -520,11 +521,11 @@
         - Performance-Optimierung: Sie verbessern die Leistung von Webanwendungen durch Caching und Datenkompression.
       
       Proxies sind vielseitige Vermittlerinstanzen, die in vielen Aspekten des Systemdesigns eine wichtige Rolle spielen. Sie tragen zur Netzwerksicherheit, Zugriffskontrolle und Performance-Optimierung bei.
-      
+      [4]
       
       ---
       
-      # Reverse Proxy
+      ### Reverse Proxy
       
       - **Definition**
         - Entschiedene Komponente in modernen Webarchitekturen.
@@ -551,7 +552,7 @@
         - Unverzichtbar, um Webanwendungen sicherer, leistungsfähiger und leichter wartbar zu machen.
       
       Reverse-Proxys spielen eine entscheidende Rolle bei der Verbesserung der Leistung und Sicherheit von Webanwendungen sowie bei der Vereinfachung der Serververwaltung und Skalierung.
-      
+      [6]
       ---
       
       # Load Balancer
@@ -567,7 +568,7 @@
       - **Hohe Verfügbarkeit und Fehlertoleranz**
         - Spielt eine entscheidende Rolle bei der Gewährleistung hoher Verfügbarkeit und Fehlertoleranz.
         - Gleichmäßige Verteilung der Arbeitslast und Umleitung des Datenverkehrs bei Serverausfällen.
-      
+      [6]
       ---
       # Load Balancer
       
@@ -576,10 +577,10 @@
         - Optimiert die Anwendungsleistung und die Nutzererfahrung.
       
       Load Balancer sind von entscheidender Bedeutung für die Verbesserung der Leistung, Skalierbarkeit und Verfügbarkeit von Webanwendungen.
-      
+      [6]
       ---
       
-      # API Gateway vs Proxy vs Reverse Proxy vs Load Balancer
+      ### API Gateway vs Proxy vs Reverse Proxy vs Load Balancer
       
       Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen einige Gemeinsamkeiten auf, dienen jedoch in modernen Webarchitekturen unterschiedlichen Zwecken.
       
@@ -592,8 +593,9 @@
         - Operieren auf der Anwendungsebene (Layer 7) und bieten Zusatzfunktionen wie URL-Umschreiben, Inhaltskomprimierung und Zugriffskontrolle.
         - Verbessern die Sicherheit und Wartbarkeit von Anwendungen.
         - Ideal, wenn erweiterte Anwendungsebenenfunktionen benötigt werden.
+      [6]
       ---
-      # API Gateway vs Proxy vs Reverse Proxy vs Load Balancer
+      ### API Gateway vs Proxy vs Reverse Proxy vs Load Balancer
       
       - **Proxys:**
         - Allgemeine Vermittlerinstanzen zwischen Client und Server.
@@ -604,7 +606,7 @@
         - Ideal für Microservices-Architekturen, in denen verschiedene APIs zentrale Verwaltung, Sicherheit und Skalierbarkeit benötigen.
         - Bieten erweiterte Funktionen wie Authentifizierung, Ratenbegrenzung, Anfrage-/Antworttransformation und Überwachung.
         - Unverzichtbar, wenn Ihre Anwendung stark von APIs abhängt und Sie das Management und die Sicherheit Ihrer Schnittstellen optimieren möchten.
-      
+      [6]
       ---
       
       # Skalierungsmuster
@@ -625,7 +627,7 @@
       **Ein Skalierungsmuster, auch als Skalierungsmuster oder Skalierungstyp bezeichnet, ist ein bewährter Ansatz oder eine bewährte Methode zur Bewältigung von Skalierbarkeitsanforderungen in Software- oder Informationssystemen. Skalierungsmuster bieten Richtlinien und bewährte Praktiken, um die Leistung, Verfügbarkeit und Kapazität einer Anwendung oder eines Systems zu erhöhen, wenn die Anforderungen steigen.**
       
       *Diese Muster helfen bei der Bewältigung von Herausforderungen wie einem zunehmenden Datenverkehr, steigenden Benutzerzahlen oder wachsenden Datenmengen. Beispiele für Skalierungsmuster sind das Load-Balancing, das Caching, die vertikale und horizontale Skalierung, das Sharding und viele andere. Jedes dieser Muster bietet eine spezifische Methode zur Verbesserung der Skalierbarkeit und hilft Entwicklern und Systemarchitekten dabei, geeignete Lösungen für ihre Anwendungen zu entwickeln.*
-      
+      [4]
       
       ---
       
@@ -646,7 +648,7 @@
       - Beispiele: MySQL, Amazon RDS.
       - Vorteile: Schnelle und kostengünstige Erweiterung der Infrastruktur.
       - Begrenzt durch Kapazität einer einzelnen Maschine.
-      
+      [7]
       ---
       
       ## Welche Skalierung?
@@ -666,23 +668,23 @@
       - Schnelle und kostengünstige Erweiterung der Infrastruktur.
       - Begrenzt durch die Kapazität einer einzelnen Maschine.
       - Möglicherweise nicht für zukünftige Anforderungen ausreichend.
-      
+      [7]
       ---
       
-      # Replikation: Verbesserung von Datenverfügbarkeit und -leistung
+      ## Replikation: Verbesserung von Datenverfügbarkeit und -leistung
       
-      ## Was ist Replikation?
+      ### Was ist Replikation?
       
       - Prozess, bei dem Daten von einer Datenbank auf einen anderen Server kopiert werden.
       - Ziel: Verbesserung der Datenverfügbarkeit und -leistung.
       - Reduziert Netzwerklatenz und ermöglicht weltweit schnellere Datenzugriffe.
       - Löst Probleme in Bezug auf Verfügbarkeit, Fehlertoleranz und Datendurchsatz.
       
-      ## Replikationsalgorithmen
+      ### Replikationsalgorithmen
       
       - Leader-basierte Replikation: Mit synchronen und asynchronen Strategien.
       - Wahl des Replikationsansatzes abhängig von spezifischen Anforderungen und Kompromissen.
-      
+      [8]
       ---
       
       # Partitionierung: Skalierbarkeit und Leistungssteigerung
@@ -693,7 +695,7 @@
       - Partitionierung teilt den Datensatz in kleinere Teilmengen auf.
       - Jede Partition wird zu einer eigenen kleinen Datenbank.
       - Ziel: Verbesserung der Leistung und Erhöhung der Skalierbarkeit.
-      
+      [9]
       ---
       
       # Sharding: Skalierbarkeit und Leistungssteigerung
@@ -707,7 +709,7 @@
       ### Horizontales Sharding
       
       - Geeignet für Abfragen, die oft in Gruppen zusammengefasste Teilzeilen zurückgeben, z.B. Datumsfilter.
-      
+      [10]
       ---
       ## Sharding: Skalierbarkeit und Leistungssteigerung
       
@@ -725,7 +727,7 @@
       
       - Sharding verteilt Daten auf mehrere Computer.
       - Partitionierung gruppiert Teilmengen von Daten innerhalb einer einzelnen Datenbankinstanz.
-      - Die Begriffe werden manchmal synonym verwendet, insbesondere bei "horizontal" oder "vertikal" gekennzeichnet.
+      - Die Begriffe werden manchmal synonym verwendet, insbesondere bei "horizontal" oder "vertikal" gekennzeichnet. [10]
       
       ---
       
@@ -741,7 +743,7 @@
       
       - Analysiert Benutzeranfragen und leitet sie an am besten geeignete Server weiter.
       - Verwendet Algorithmen wie Round Robin, Weighted Round Robin, Least Connections und Weighted Least Connections.
-      
+      [11]
       ---
       # Load Balancing: Optimierung von Leistung und Verfügbarkeit
       
@@ -749,7 +751,7 @@
       
       - Stabilität und Hochverfügbarkeit von Online-Diensten.
       - Besonders wichtig in Umgebungen mit starkem Online-Traffic und E-Commerce-Branche.
-      
+      [11]
       ---
       
       ## Load Balancing Algorithmen
@@ -761,7 +763,7 @@
         - Round-Robin-Methode: Server werden nacheinander ausgewählt.
         - Gewichtete Round-Robin-Methode: Server erhalten unterschiedliche Gewichtungen.
         - IP-Hash-Methode: Die IP-Adresse des Clients wird in eine Nummer umgewandelt und Server zugewiesen.
-      
+      [12]
       ---
       ## Load Balancing Algorithmen
       
@@ -773,7 +775,7 @@
         - Weighted Least Connection Method: Server mit geringer Kapazitätsauslastung werden bevorzugt.
         - Least Response Time Method: Die Antwortzeit und aktive Verbindungen werden kombiniert, um den besten Server auszuwählen.
         - Resource-Based Method: Der Load Balancer berücksichtigt die aktuelle Serverlast basierend auf Ressourcennutzung.
-      
+      [12]
       ---
       
       ## Caching: Steigerung der Leistung und Effizienz
@@ -788,7 +790,7 @@
       
       - Caches sind hierarchisch organisiert (z. B. L1, L2, L3) und dienen dem sequenziellen Datenabruf.
       - Cache-Zugriffe können "Cache-Treffer" oder "Cache-Fehler" sein.
-      
+      [13]
       ---
       
       ### Caching-Strategien
@@ -804,7 +806,7 @@
       ### Vorteile von Caching
       
       - Verbesserte Leistung, geringere Latenz, Entlastung der Datenbank, niedrigere Netzwerkkosten und höherer Lesedurchsatz.
-      
+      [13]
       ---
       
       ## Cache-Arten: Local, Distributed, Hierarchical
@@ -823,6 +825,7 @@
       - Bildet einen gemeinsamen In-Memory-Datenspeicher.
       - Bietet schnellen Datenzugriff.
       - Skalierbare Lösung in Umgebungen mit hohem Datenvolumen und hoher Datenlast.
+      [14]
       ---
       ## Cache-Arten: Local, Distributed, Hierarchical
       
@@ -833,7 +836,7 @@
       - Übergeordneter Cache höher in der Hierarchie.
       - Untergeordneter Cache, für den der Traffic Server selbst als übergeordneter Cache fungiert.
       - Effiziente Organisation von Caches in verschiedenen Ebenen.
-      
+      [14]
       ---
       
       # Skalierungswürfel
@@ -851,7 +854,7 @@
       - Aufteilung der Anwendung in Dienste oder Microservices.
       - Transformation einer monolithischen Anwendung in skalierbare, unabhängige Dienste.
       - Bessere Beherrschung von Komplexität und Skalierbarkeit.
-      
+      [15]
       ---
       
       # Skalierungswürfel
@@ -863,7 +866,7 @@
       - Verbessert die Datenaufteilung und Ressourcennutzung.
       
       Der Skalierungswürfel bietet verschiedene Ansätze zur Bewältigung der Skalierbarkeitsanforderungen von Anwendungen.
-      
+      [15]
       ---
       
       # Quellen
