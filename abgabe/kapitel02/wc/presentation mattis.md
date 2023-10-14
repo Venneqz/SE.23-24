@@ -188,10 +188,13 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 
 # Systemarchitektur verteilter Softwaresysteme
 ---
+
 1. Visualisierung von Systemarchitekturen
+1. Systemarchitekturmuster
+1. Modulare Architekturen
+
 ---
-2. Systemarchitekturmuster
----
+
 ## Client-Server-Modell
 
 - **Grundkonzept:** Trennung von Frontend (Client) und Backend (Server).
@@ -335,8 +338,6 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 - **Social Media:**
   - Benachrichtigungen, Feeds, Aktivitätsströme.
 
----
-3. Modulare Architekturen
 ---
 ## Serviceorientierte Architektur (SOA)
 

@@ -335,6 +335,7 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
 
 # Skalierungsmuster
 
+1. Definiton
 1. Horizontale Skalierung vs vertikale Skalierung
 1. Replikation
 1. Partitionierung
