@@ -736,6 +736,9 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
   - Gewichtete Round-Robin-Methode: Server erhalten unterschiedliche Gewichtungen.
   - IP-Hash-Methode: Die IP-Adresse des Clients wird in eine Nummer umgewandelt und Server zugewiesen.
 
+---
+## Load Balancing Algorithmen
+
 ### Dynamisches Load Balancing
 
 - Untersucht den aktuellen Status der Server, bevor der Datenverkehr verteilt wird.
@@ -794,6 +797,8 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 - Bildet einen gemeinsamen In-Memory-Datenspeicher.
 - Bietet schnellen Datenzugriff.
 - Skalierbare Lösung in Umgebungen mit hohem Datenvolumen und hoher Datenlast.
+---
+## Cache-Arten: Local, Distributed, Hierarchical
 
 ### Hierarchischer Cache
 
