@@ -193,6 +193,19 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 1. Modulare Architekturen
 
 ---
+# Systemarchitekturmuster
+1. Client Server
+1. Anwendungsbespiele
+1. Web Architekturen
+1. PWA vs SPA vs MPA
+1. Peer to peer
+1. Anwendungsbespiele
+1. Event Driven Architecture
+1. Event types
+1. Message Broker
+1. ESB vs Message Queue
+1. Anwendungsbeispiele
+---
 
 ## Client-Server-Modell
 
@@ -336,6 +349,14 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 
 - **Social Media:**
   - Benachrichtigungen, Feeds, Aktivitätsströme.
+---
+# Modulare Architekturen
+1. Service oriented architecture (SOA) 
+1. Service Discovery
+1. Microservices
+1. Monolith vs. Distributed Monolith vs. Microservice
+1. Choreography Pattern vs Orchestration Pattern
+1. Service Mesh
 
 ---
 ## Serviceorientierte Architektur (SOA)
