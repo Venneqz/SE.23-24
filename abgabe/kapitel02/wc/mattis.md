@@ -110,6 +110,10 @@
       * ESB vs Message Queue
             Ein Enterprise Service Bus (ESB) ist eine zentrale Komponente in einer serviceorientierten Architektur (SOA). Die SOA ermöglicht es Systemen, miteinander zu kommunizieren und Daten über XML-formatierte Nachrichten auszutauschen. Der ESB fungiert als zentrale Schnittstelle für alle Systeme und vereinfacht die Integration, indem er sicherstellt, dass jedes System nur mit dem ESB kommunizieren muss. Der ESB übersetzt dann die Nachrichten in das richtige Format und leitet sie an das entsprechende System weiter. [10]
 
+            MessageQueue ermöglichen die asynchrone Kommunikation zwischen verschiedenen Komponenten oder Systemen, um die Systemzuverlässigkeit, Skalierbarkeit und Flexibilität zu erhöhen. Dies wird durch Hinzufügen eines Nachrichtenbrokers (wie RabbitMQ oder LavinMQ) erreicht, um Nachrichten oder Daten zwischen Prozessen oder Systemen zu übermitteln. Nachrichten werden von einem Produzenten an die Nachrichtenwarteschlange gesendet, wo sie gehalten werden, bis sie von einem Konsumenten verarbeitet werden. Dies entkoppelt den Produzenten vom Konsumenten und ermöglicht es ihnen, unabhängig voneinander zu arbeiten. Nachrichtenwarteschlangen können für verteiltes Computing, Aufgabenplanung und Workflow-Management verwendet werden. [11]
+
+            Ein ESB ist in der Regel umfangreicher und komplexer, während eine Message Queue auf die Verwaltung und Verteilung von Nachrichten beschränkt ist.
+
       * Anwendungsbeispiele
         EDA findet in verschiedenen Anwendungsdomänen Anwendung, darunter:
             -E-Commerce: Verarbeitung von Bestellungen, Inventaraktualisierungen und Benachrichtigungen.
@@ -127,11 +131,33 @@
 
   * Modulare Architekturen
     * Service oriented architecture (SOA) 
+      Serviceorientierte Architektur (SOA) ist eine Methode der Softwareentwicklung, bei der Softwarekomponenten, sogenannte Services, genutzt werden, um Geschäftsanwendungen zu erstellen. Jeder Service erfüllt eine spezifische Geschäftsfunktion und kann plattform- und sprachübergreifend mit anderen Services kommunizieren. Entwickler setzen SOA ein, um Services in verschiedenen Systemen zu wiederverwenden oder unabhängige Services zu kombinieren, um komplexe Aufgaben zu lösen.
+      Ein Beispiel für die Anwendung von SOA ist die Benutzerauthentifizierung in einem Unternehmen. Statt den Authentifizierungscode für jede Anwendung neu zu schreiben, kann ein einziger Authentifizierungsservice erstellt und von allen Anwendungen wiederverwendet werden. In ähnlicher Weise können verschiedene Systeme in einer Gesundheitsorganisation, wie Patientenverwaltung und elektronische Gesundheitsakten, einen gemeinsamen Service aufrufen, um die Patientenregistrierung effizient durchzuführen. [12]
       * Service Discovery
+      Service Discovery (Dienstevermittlung) in Bezug auf Serviceorientierte Architektur (SOA) ist der Prozess, bei dem Webdienstanbieter lokalisiert und Webdienstbeschreibungen abgerufen werden, die zuvor veröffentlicht wurden. Dieser Prozess wird hauptsächlich durch ein Diensteregister durchgeführt, das relevante Metadaten zu verfügbaren und zukünftigen Diensten sowie Verweise auf die entsprechenden Dienstvertragsdokumente enthält, die Service Level Agreements (SLAs) enthalten können.
+      Besonders in modernen Architekturen, in denen einzelne Dienstinstanzen dynamisch erscheinen und verschwinden können, ist es entscheidend, dass Dienstnutzer von der genauen Kenntnis der Bereitstellungstopologie der Architektur entkoppelt sind.
+      Nach Abschluss des Entdeckungsprozesses sollte der Dienstentwickler oder die Client-Anwendung den exakten Standort eines Webdienstes (URI), dessen Fähigkeiten und die Art und Weise, wie auf ihn zugegriffen werden kann, kennen. Dies ermöglicht eine effiziente und flexible Kommunikation zwischen Diensten und Anwendungen in SOA, ohne umfangreiche manuelle Konfigurationen durchführen zu müssen.
     * Microservices
+    Microservices sind ein architekturbezogener und organisatorischer Ansatz in der Softwareentwicklung, bei dem Software aus kleinen unabhängigen Services besteht, die über sorgfältig definierte APIs kommunizieren. Diese Services gehören kleinen, eigenständigen Teams.
+    Microservices-Architekturen vereinfachen die Skalierbarkeit und verringern die Entwicklungszeit von Anwendungen, ermöglichen Innovationen und verkürzen die Markteinführungszeit für neue Funktionen. [14]
+
       * Monolith vs. Distributed Monolith vs. Microservice
+          Monolithische Architektur ist eine zusammenhängende Anwendung, bei der alle Prozesse eng miteinander verbunden sind. Wenn ein Prozess Probleme hat, muss die gesamte Anwendung skaliert werden, was bei wachsendem Code komplizierter wird. Dies erschwert Experimente und erhöht das Risiko für Ausfälle.
+
+         Microservices-Architektur hingegen baut Anwendungen aus unabhängigen, eigenständigen Komponenten auf, die über klare Schnittstellen kommunizieren. Jeder Service erfüllt eine bestimmte Funktion und kann unabhängig aktualisiert, bereitgestellt und skaliert werden, was die Flexibilität und Verfügbarkeit der Anwendung verbessert.
+
       * Choreography Pattern vs Orchestration Pattern
+          Choreografie: Services interagieren direkt miteinander, ohne zentrale Kontrolle. Ereignisbasierte Kommunikation. Vorteile: lose Kopplung, dezentrale Kontrolle. Nachteile: komplexe Wartung, geringe Transparenz.
+
+          Orchestrierung: Zentraler Orchestrator steuert die Services. Befehlsbasierte Kommunikation. Vorteile: einfache Kontrolle, gute Sichtbarkeit, einfache Fehlerbehebung. Nachteile: engere Kopplung, Single Point of Failure.
+
+          Wann Choreografie nutzen: Bei unabhängigen Services, lose gekoppelt, Flexibilität benötigt.
+
+          Wann Orchestrierung nutzen: Abhängige Services, spezifische Reihenfolge, gute Überwachung.
+
+          Mischung: Beide Ansätze können kombiniert werden, um Flexibilität und Kontrolle zu bieten, je nach den Anforderungen der Architektur. [15]
       * Service Mesh
+      Ein Service Mesh ist eine anpassbare Infrastrukturebene für eine Microservices-Anwendung. Es sorgt dafür, dass Anfragen in der komplexen Struktur von Diensten in einer cloudbasierten Anwendung zuverlässig übermittelt werden. Es ermöglicht flexible, zuverlässige und schnelle Kommunikation zwischen den einzelnen Diensten. Das Mesh bietet Funktionen wie die Erkennung von Diensten, Lastenausgleich, Verschlüsselung, Authentifizierung, Autorisierung und andere Möglichkeiten.[16]
 
 
 
@@ -166,3 +192,15 @@
 [9]: Frank de Jonge. "The Different Types of Events in Event-Driven Systems." Frank de Jonge's Blog, URL: https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/#:~:text=Three%20event%20archetypes&text=These%20types%20of%20events%20are,The%20RESTful%20or%20%22Fat%22%20Event (abgerufen am 11.10.2023)
 
 [10]: LoiLiangYang. "Enterprise Service Bus" YouTube, hochgeladen von LoiLiangYang, URL: https://www.youtube.com/watch?v=VHzWswQNtgk&ab_channel=LoiLiangYang (abgerufen am 11.10.2023)
+
+[11]: CloudAMQP. "What is Message Queuing?" CloudAMQP Blog, URL: https://www.cloudamqp.com/blog/what-is-message-queuing.html (abgerufen am 11.10.2023)
+
+[12]: Amazon Web Services (AWS). "Service-Oriented Architecture (SOA)." AWS, URL: https://aws.amazon.com/de/what-is/service-oriented-architecture/ (abgerufen am 11.10.2023)
+
+[13]: Coforge. "SOA Service Discovery, Repository and Service Discovery." Coforge Blog, URL: https://www.coforge.com/blog/soa-service-registry/repository-and-service-discovery#:~:text=SOA%20Service%20Discovery,that%20have%20been%20previously%20published. (abgerufen am 11.10.2023)
+
+[14]: Amazon Web Services (AWS). "Microservices." AWS, URL: https://aws.amazon.com/de/microservices/ (abgerufen am 14. Oktober 2023)
+
+[15]: Camunda. "Orchestration vs. Choreography." Camunda Blog, URL: https://camunda.com/blog/2023/02/orchestration-vs-choreography/ (abgerufen am 14. Oktober 2023)
+
+[16]: TriggerMesh. "What Is a Service Mesh?" TriggerMesh FAQ, URL: https://www.triggermesh.com/faq/what-is-a-service-mesh (abgerufen am 14. Oktober 2023)
