@@ -99,6 +99,10 @@ In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Di
 - Effiziente Ausführung anspruchsvoller Anwendungen.
 - Bereitstellung von Rechenleistung und Speicherressourcen.
 
+---
+
+# Motivation (Warum man Verteilung braucht):
+
 ## Fortgeschrittene Netztechnologien
 - Kommunikation und Koordination über verschiedene Entfernungen.
 - Skalierbarkeit und Flexibilität des Systems.
@@ -126,6 +130,8 @@ In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Di
 - Verteilung von Ressourcen über Knoten.
 - Beispiel: CDNs - Datenverteilung mit zentraler Steuerung.
 
+---
+
 ## Widerstandsfähigkeit
 
 ### Dezentrale Systeme
@@ -136,6 +142,8 @@ In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Di
 - Widerstandsfähigkeit hängt von der Architektur ab.
 - Beispiel: Cloud-Plattformen - Robustheit durch Verteilung.
 
+---
+
 ## Skalierbarkeit
 
 ### Dezentrale Systeme
@@ -145,6 +153,8 @@ In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Di
 ### Verteilte Systeme
 - Bessere Skalierbarkeit durch Ressourcenverteilung.
 - Beispiel: Cloud-Computing.
+
+---
 
 ## Datenkonsistenz
 
@@ -171,6 +181,8 @@ In verteilten Systemen können verschiedene Leute und Programme gemeinsam auf Di
 - Bezieht sich auf die tatsächliche gleichzeitige Ausführung von Aufgaben oder Prozessen auf verschiedenen Knoten oder Systemen.
 - Erfordert eine explizite Koordination zwischen den Knoten.
 - Aufteilung einer Aufgabe in Teilaufgaben und parallele Ausführung mit Synchronisation für kohärente Ergebnisse.
+
+---
 
 ## Beispiel: Echtzeittransaktionsverarbeitung
 
@@ -238,7 +250,7 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 ---
 
 ## PWA vs SPA vs MPA
----
+
 ### Progressive Web App (PWA):
 - Merkmale:
   - Ressourceneffizient und schnell.
@@ -404,6 +416,9 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
   - Vorteile: einfache Kontrolle, gute Sichtbarkeit, einfache Fehlerbehebung.
   - Nachteile: engere Kopplung, Single Point of Failure.
 
+---
+## Choreography Pattern vs. Orchestration Pattern
+
 - **Wann Choreografie nutzen:**
   - Bei unabhängigen Services, lose gekoppelt, Flexibilität benötigt.
 
@@ -456,8 +471,6 @@ Ein **Service Mesh** ist eine anpassbare Infrastrukturebene für Microservices-A
 - **Wichtigkeit**
   - Unverzichtbare Werkzeuge zur effizienten Verwaltung und Absicherung von APIs in modernen Anwendungen.
 
-API-Gateways spielen eine entscheidende Rolle in der Verwaltung und Absicherung von APIs, insbesondere in komplexen Microservices-Systemen.
-
 ---
 
 # Proxy
@@ -471,6 +484,8 @@ API-Gateways spielen eine entscheidende Rolle in der Verwaltung und Absicherung 
   - Überwachung: Sie ermöglichen die Überwachung des Datenverkehrs und bieten Einblicke in die Kommunikation zwischen Client und Server.
   - Sicherheit: Proxies dienen der Sicherung des Datenverkehrs und dem Schutz vor Bedrohungen.
   - Performance-Optimierung: Sie optimieren die Leistung durch Funktionen wie Caching und Komprimierung.
+---
+# Proxy
 
 - **Einsatzbereiche**
   - Netzwerksicherheit: Proxies tragen zur Sicherheit von Netzwerken bei, indem sie unerwünschte oder schädliche Inhalte filtern.
@@ -500,6 +515,8 @@ Proxies sind vielseitige Vermittlerinstanzen, die in vielen Aspekten des Systemd
 - **Serververwaltung und Skalierung**
   - Vereinfacht die Verwaltung und Skalierung von Servern.
   - Verbessert die Wartbarkeit der Anwendung.
+---
+# Reverse Proxy
 
 - **Beispiele**
   - Plattformen wie GitHub setzen Reverse-Proxys ein, um effiziente und leistungsstarke Webdienste bereitzustellen.
@@ -525,6 +542,9 @@ Reverse-Proxys spielen eine entscheidende Rolle bei der Verbesserung der Leistun
   - Spielt eine entscheidende Rolle bei der Gewährleistung hoher Verfügbarkeit und Fehlertoleranz.
   - Gleichmäßige Verteilung der Arbeitslast und Umleitung des Datenverkehrs bei Serverausfällen.
 
+---
+# Load Balancer
+
 - **Reibungsloser Betrieb**
   - Gewährleistet einen reibungslosen Betrieb, auch bei Spitzenlastzeiten oder Serverausfällen.
   - Optimiert die Anwendungsleistung und die Nutzererfahrung.
@@ -546,6 +566,8 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
   - Operieren auf der Anwendungsebene (Layer 7) und bieten Zusatzfunktionen wie URL-Umschreiben, Inhaltskomprimierung und Zugriffskontrolle.
   - Verbessern die Sicherheit und Wartbarkeit von Anwendungen.
   - Ideal, wenn erweiterte Anwendungsebenenfunktionen benötigt werden.
+---
+# API Gateway vs Proxy vs Reverse Proxy vs Load Balancer
 
 - **Proxys:**
   - Allgemeine Vermittlerinstanzen zwischen Client und Server.
@@ -583,7 +605,7 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
 
 # Horizontale Skalierung vs vertikale Skalierung
 
-## Horizontale Skalierung
+### Horizontale Skalierung
 
 - Daten werden auf mehrere Knoten partitioniert.
 - Verteilt die Datenlast auf mehrere Server.
@@ -591,7 +613,7 @@ Aber was ist jetzt der Unterschied zwischen den ganzen? Diese Komponenten weisen
 - Vorteile: Reduzierte Ausfallmöglichkeiten, bessere Leistung durch Hinzufügung weiterer Computer.
 - Geeignet für Anwendungen mit nationaler oder internationaler Kundschaft.
 
-## Vertikale Skalierung
+### Vertikale Skalierung
 
 - Alle Daten bleiben auf einem einzelnen Knoten.
 - Skalierung durch Erweiterung von CPU- und RAM-Ressourcen auf einem Knoten.
@@ -650,27 +672,30 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 # Sharding: Skalierbarkeit und Leistungssteigerung
 
-## Was ist Sharding?
+### Was ist Sharding?
 
 - Datenbankoptimierungstechnik zur Aufteilung großer Datenbanktabellen in kleinere Tabellen, genannt Shards oder Partitionen.
 - Shards können identische Schemata mit eindeutigen Zeilen (horizontal Sharding) oder Teilschemata der Originaltabelle haben (vertikales Sharding).
 - Ziel: Verbesserung der horizontalen Skalierbarkeit und Leistungsfähigkeit.
 
-## Horizontales Sharding
+### Horizontales Sharding
 
 - Geeignet für Abfragen, die oft in Gruppen zusammengefasste Teilzeilen zurückgeben, z.B. Datumsfilter.
 
-## Vertikales Sharding
+---
+# Sharding: Skalierbarkeit und Leistungssteigerung
+
+### Vertikales Sharding
 
 - Nützlich, wenn Abfragen nur eine Teilmenge der Datenspalten zurückgeben.
 - Ermöglicht die Aufteilung von Daten auf separate Server.
 
-## Vorteile von Sharding
+### Vorteile von Sharding
 
 - Höhere Verfügbarkeit und reduzierte Auswirkungen von Ausfällen auf betroffene Datenblöcke.
 - Backup-Shards können auf zusätzlichen Knoten repliziert werden.
 
-## Unterschied zu Partitionierung
+### Unterschied zu Partitionierung
 
 - Sharding verteilt Daten auf mehrere Computer.
 - Partitionierung gruppiert Teilmengen von Daten innerhalb einer einzelnen Datenbankinstanz.
@@ -691,6 +716,9 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 - Analysiert Benutzeranfragen und leitet sie an am besten geeignete Server weiter.
 - Verwendet Algorithmen wie Round Robin, Weighted Round Robin, Least Connections und Weighted Least Connections.
 
+---
+# Load Balancing: Optimierung von Leistung und Verfügbarkeit
+
 ## Bedeutung von Load Balancing
 
 - Stabilität und Hochverfügbarkeit von Online-Diensten.
@@ -700,7 +728,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 # Load Balancing Algorithmen
 
-## Statisches Load Balancing
+### Statisches Load Balancing
 
 - Folgt festen Regeln und ist unabhängig vom aktuellen Serverstatus.
 - Beispiele für statische Algorithmen:
@@ -708,7 +736,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
   - Gewichtete Round-Robin-Methode: Server erhalten unterschiedliche Gewichtungen.
   - IP-Hash-Methode: Die IP-Adresse des Clients wird in eine Nummer umgewandelt und Server zugewiesen.
 
-## Dynamisches Load Balancing
+### Dynamisches Load Balancing
 
 - Untersucht den aktuellen Status der Server, bevor der Datenverkehr verteilt wird.
 - Beispiele für dynamische Algorithmen:
@@ -721,28 +749,30 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 # Caching: Steigerung der Leistung und Effizienz
 
-## Was ist Caching?
+### Was ist Caching?
 
 - Verfahren zur Steigerung der Leistung und Effizienz von Datenabrufen in Computersystemen.
 - Daten werden vorübergehend in einem schnelleren Speicher (Cache) gespeichert.
 - Reduziert die Notwendigkeit, auf langsamere Speicherschichten zuzugreifen.
 
-## Cache-Hierarchie
+### Cache-Hierarchie
 
 - Caches sind hierarchisch organisiert (z. B. L1, L2, L3) und dienen dem sequenziellen Datenabruf.
 - Cache-Zugriffe können "Cache-Treffer" oder "Cache-Fehler" sein.
 
-## Caching-Strategien
+---
+
+### Caching-Strategien
 
 - Verschiedene Strategien wie Durchschreibcache, Write-Around-Cache und Write-Back-Cache mit Vor- und Nachteilen.
 - Räumungsrichtlinien wie FIFO, LIFO, LRU und andere steuern, welche Daten im Cache bleiben.
 
-## Anwendungsfälle
+### Anwendungsfälle
 
 - Caching in Anwendungsfällen wie Datenbank-Caching, Content Delivery Network (CDN), Domain Name System (DNS)-Caching und API-Caching.
 - Nicht sinnvoll, wenn Cache-Zugriff genauso lange dauert wie Zugriff auf primären Speicher oder Daten häufig ändern.
 
-## Vorteile von Caching
+### Vorteile von Caching
 
 - Verbesserte Leistung, geringere Latenz, Entlastung der Datenbank, niedrigere Netzwerkkosten und höherer Lesedurchsatz.
 
@@ -750,7 +780,7 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 # Cache-Arten: Local, Distributed, Hierarchical
 
-## Lokaler Cache
+### Lokaler Cache
 
 - Clientseitiger Cache.
 - Speichert eine Teilmenge der Daten des Master-Space.
@@ -758,14 +788,14 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 - Versucht, Abfragen aus dem Cache zu erfüllen.
 - Führt sie im Master-Space aus und speichert Ergebnisse lokal.
 
-## Verteilter Cache
+### Verteilter Cache
 
 - Kombiniert den Arbeitsspeicher (RAM) mehrerer vernetzter Computer.
 - Bildet einen gemeinsamen In-Memory-Datenspeicher.
 - Bietet schnellen Datenzugriff.
 - Skalierbare Lösung in Umgebungen mit hohem Datenvolumen und hoher Datenlast.
 
-## Hierarchischer Cache
+### Hierarchischer Cache
 
 - Cache-Ebenen, die miteinander kommunizieren.
 - Erkennt übergeordnete (parent) und untergeordnete (child) Caches.
@@ -779,19 +809,23 @@ Die Entscheidung zwischen horizontaler und vertikaler Skalierung hängt von vers
 
 Der Skalierungswürfel ist ein dreidimensionales Modell zur Skalierung von Anwendungen, wie im Buch "The Art of Scalability" beschrieben. Er bietet drei Hauptansätze zur Skalierung:
 
-## X-Achsen-Skalierung
+### X-Achsen-Skalierung
 
 - Verteilung der Last auf mehrere Instanzen.
 - Erhöht die Anzahl der Instanzen, um die Gesamtlast zu bewältigen.
 - Gleichmäßige Verteilung des Datenverkehrs.
 
-## Y-Achsen-Skalierung
+### Y-Achsen-Skalierung
 
 - Aufteilung der Anwendung in Dienste oder Microservices.
 - Transformation einer monolithischen Anwendung in skalierbare, unabhängige Dienste.
 - Bessere Beherrschung von Komplexität und Skalierbarkeit.
 
-## Z-Achsen-Skalierung
+---
+
+# Skalierungswürfel
+
+### Z-Achsen-Skalierung
 
 - Teilt Daten auf identische Instanzen auf.
 - Leitet Anfragen basierend auf Anfrageattributen weiter.
