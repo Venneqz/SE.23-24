@@ -1,8 +1,4 @@
----
-title: Software Systeme
-author: Marvin Petschulat, Mattis Wellenbüscher
----
-
+class: center, middle
 # Inhaltsverzeichnis
 
 - Verteilte Softwaresysteme
@@ -191,6 +187,236 @@ In verteilten Systemen ist die Unterscheidung zwischen Concurrent und Parallel w
 1. Visualisierung von Systemarchitekturen
 1. Systemarchitekturmuster
 1. Modulare Architekturen
+
+---
+# Systemarchitekturmuster
+1. Client Server
+1. Anwendungsbespiele
+1. Web Architekturen
+1. PWA vs SPA vs MPA
+1. Peer to peer
+1. Anwendungsbespiele
+1. Event Driven Architecture
+1. Event types
+1. Message Broker
+1. ESB vs Message Queue
+1. Anwendungsbeispiele
+---
+
+## Client-Server-Modell
+
+- **Grundkonzept:** Trennung von Frontend (Client) und Backend (Server).
+  
+- **Beispiele:** 
+    - In der Webentwicklung, wo der Browser auf dem Client-Ende arbeitet und der Server die Daten bereitstellt.
+    - Kommunikation zwischen zwei Rechnern, bei der der Client Anfragen stellt und der Server Antworten liefert.
+
+- **Anwendungen:** 
+    - Von einfachen Google-Suchanfragen bis hin zu komplexen Unternehmensdatenbanksystemen.
+---
+
+## Anwendungsbeispiele
+
+- **E-Mail-Client:**
+  - Schreiben, Senden, Empfangen von E-Mails.
+  - Beispiele: Outlook, Thunderbird, Apple Mail.
+
+- **FTP-Client:**
+  - Datei-Upload/-Download via FTP-Server.
+
+- **SSH-Client:**
+  - Sichere SSH-Verbindungen.
+  - Beispiel: PuTTY (Windows).
+
+- **Webbrowser:**
+  - Anfragen an Webserver (HTTP).
+  - Bekannte: Chrome, Firefox.
+
+- **DNS-Client:**
+  - Löst Computernamen in IP-Adressen auf.
+  - Hintergrund-Client im TCP/IP-Protokoll.
+---
+
+## PWA vs SPA vs MPA
+---
+### Progressive Web App (PWA):
+- Merkmale:
+  - Ressourceneffizient und schnell.
+  - Bietet Offline-Funktionalität und Push-Benachrichtigungen.
+  - Kann auf dem Startbildschirm eines Geräts installiert werden.
+- Verwendungsszenarien:
+  - Gut geeignet für breite Anwendungsbereiche, insbesondere auf Mobilgeräten.
+  - Erhöht die Reichweite von Webanwendungen und verbessert die Benutzerbindung.
+---
+### Single Page Application (SPA):
+- Merkmale:
+  - Laden in einem einzigen HTML-Dokument, dynamische Inhaltsänderung ohne Seitenneuladung.
+  - Verwendet JavaScript-Frameworks wie Angular, React oder Vue.js.
+  - Schnelle Benutzererfahrung durch bedarfsgesteuertes Nachladen von Daten.
+- Verwendungsszenarien:
+  - Ideal für interaktive Anwendungen, bei denen Seitenwechsel ohne Neuladen erforderlich ist, z.B. soziale Medien und E-Commerce.
+---
+### Multi-Page Application (MPA):
+- Merkmale:
+  - Besteht aus mehreren HTML-Seiten, jede mit eigener Ansicht.
+  - Navigation durch Klicken auf Links, separate Seitenladung vom Server.
+- Verwendungsszenarien:
+  - Geeignet für traditionelle Websites und Anwendungen mit klar getrennten Inhalten und Funktionen, z.B. Unternehmenswebsites und Blogs.
+
+---
+## Peer-to-Peer (P2P)
+
+**Definition (Cambridge Dictionary):** Ein Computernetzwerk, bei dem jeder Computer als Server für andere fungieren kann, wodurch Dateien und Ressourcen gemeinsam genutzt werden können.[3]
+
+| **Vorteile**                                    | **Nachteile**                                       |
+|-----------------------------------------------|----------------------------------------------------|
+| - Schneller Aufbau                           | - Aufwändige Verwaltung je größer das Netzwerk     |
+| - Kein zentraler Server                      | - Komplexe Dateisuche im Netzwerk                  |
+| - Skalierbar, ausfallsicher                  | - Heterogene Leistung und Bandbreite im Netzwerk  |
+| - Dezentrale Kommunikation, schützt vor Zensur|                                                    |
+| - Potenziell sicherer als Client-Server       |                                                    |
+---
+## Anwendungsbeispiele
+
+- **Datenaustausch:** 
+  - Bekannte Filesharing-Netzwerke: Dropbox, Google Drive.
+
+- **Direktnachrichten und Videotelefonie:** 
+  - P2P Voice- und Videokommunikation: Skype, Microsoft Teams.
+
+- **Kollaboration:** 
+  - Teamarbeit mit Groupware: z.B. Adobe Connect.
+
+- **Blockchain:** 
+  - P2P-Transaktionen in Kryptowährungen über Blockchains.
+
+---
+## Event-Typen
+
+**1. Domain Event:**
+- Historische Datensätze im Domain-Driven Design (DDD).
+- Erfassen Absicht und Kontext bedeutsamer Zeitpunkte.
+- Benannt in menschenverständlicher Sprache (z.B., "OrderWasShipped").
+- Geeignet für Lese-Modelle und event-sourced Systeme.
+
+**2. Trigger oder Signal Event:**
+- Kleinste Art von Ereignissen, enthält ID und Zeitstempel.
+- Verwendet, um Reaktionen auszulösen oder Geschäftsprozesse zu benachrichtigen.
+- Hilfreich bei Datenschutzanforderungen (DSGVO).
+
+**3. RESTful oder "Fat" Event:**
+- Enthält die vollständige Ressourcenrepräsentation aus einer RESTful-API.
+- Ideal für Integration und externe Verbraucher.
+- Verhindert Umwege zur API und reduziert Aufwand für Verbraucher.
+
+---
+## Message Broker
+
+- **Definition:** Software, die Kommunikation und Informationsaustausch zwischen Anwendungen, Systemen und Diensten ermöglicht.
+- **Funktionen:** Übersetzt Nachrichten zwischen verschiedenen Nachrichtenprotokollen, validiert, speichert, routet und leitet sie an die richtigen Empfänger weiter.
+- **Vorteile:** Entkoppelt Prozesse und Dienste, ermöglicht Kommunikation zwischen unterschiedlichen Plattformen und Programmiersprachen.
+
+---
+## ESB vs. Message Queue
+
+| **Enterprise Service Bus (ESB)** | **Message Queue**               |
+|-----------------------------------|---------------------------------|
+| Zentrale SOA-Komponente           | Asynchrone Kommunikation         |
+| Integrationsschnittstelle         | Entkoppelt Produzenten und Konsumenten |
+| Nachrichtenübersetzung und Weiterleitung | Einsatz von Nachrichtenbrokern (z.B. RabbitMQ) |
+| Komplex und umfangreich            | Fokussiert auf Nachrichtenverwaltung |
+---
+## Anwendungsbeispiele
+
+- **E-Commerce:**
+  - Bestellverarbeitung, Inventaraktualisierung, Benachrichtigungen.
+
+- **IoT (Internet of Things):**
+  - Überwachung und Steuerung vernetzter Geräte und Sensoren.
+
+- **Finanzdienstleistungen:**
+  - Handel, Überweisungen, Betrugserkennung.
+
+- **Logistik und Lieferkettenmanagement:**
+  - Sendungsverfolgung, Routenoptimierung.
+
+- **Gesundheitswesen:**
+  - Patientenüberwachung, klinische Alarme.
+
+- **Social Media:**
+  - Benachrichtigungen, Feeds, Aktivitätsströme.
+---
+# Modulare Architekturen
+1. Service oriented architecture (SOA) 
+1. Service Discovery
+1. Microservices
+1. Monolith vs. Distributed Monolith vs. Microservice
+1. Choreography Pattern vs Orchestration Pattern
+1. Service Mesh
+
+---
+## Serviceorientierte Architektur (SOA)
+
+- **Definition:** Methode der Softwareentwicklung, bei der Services (Softwarekomponenten) für Geschäftsanwendungen genutzt werden.
+- **Merkmale:** Services erfüllen spezifische Geschäftsfunktionen, sind plattform- und sprachübergreifend, ermöglichen Wiederverwendung und Kombination für komplexe Aufgaben.
+
+**Anwendungsbeispiel:**
+- Benutzerauthentifizierung: Ein Authentifizierungsservice wird erstellt und von allen Anwendungen wiederverwendet.
+---
+## Service Discovery
+
+- **Definition:** Prozess zur Lokalisierung von Webdienstanbietern und Abruf von Dienstbeschreibungen durch Diensteregister.
+- **Zweck:** Entkoppelt Dienstnutzer von Bereitstellungstopologien, ermöglicht effiziente und flexible Kommunikation in SOA, ohne umfangreiche manuelle Konfiguration.
+---
+## Microservices
+
+- **Definition:** Softwareentwicklungsansatz mit kleinen, unabhängigen Services, die über klare APIs kommunizieren.
+- **Organisation:** Services werden von kleinen, eigenständigen Teams entwickelt.
+
+**Vorteile:**
+- Vereinfachte Skalierbarkeit und verkürzte Entwicklungszeit.
+- Ermöglicht Innovation und beschleunigt die Markteinführung neuer Funktionen.
+
+---
+## Monolith vs. Distributed Monolith vs. Microservice
+
+| **Architektur**           | **Eigenschaften**                                         |
+|---------------------------|-----------------------------------------------------------|
+| Monolithische Architektur | - Eng verknüpfte Anwendung                                |
+|                           | - Gesamte Anwendung muss bei Skalierung angepasst werden |
+|                           | - Erschwert Experimente und erhöht das Ausfallrisiko    |
+| Distributed Monolith      | - Ähnlich wie Monolith, aber auf verschiedene Server verteilt |
+| Microservices-Architektur | - Unabhängige, eigenständige Komponenten mit klaren Schnittstellen |
+|                           | - Jeder Service erfüllt spezifische Funktion, unabhängige Aktualisierung und Skalierung |
+|                           | - Verbesserte Flexibilität und Verfügbarkeit der Anwendung |
+---
+## Choreography Pattern vs. Orchestration Pattern
+
+- **Choreografie:**
+  - Services interagieren direkt, ohne zentrale Kontrolle.
+  - Ereignisbasierte Kommunikation.
+  - Vorteile: lose Kopplung, dezentrale Kontrolle.
+  - Nachteile: komplexe Wartung, geringe Transparenz.
+
+- **Orchestrierung:**
+  - Zentraler Orchestrator steuert die Services.
+  - Befehlsbasierte Kommunikation.
+  - Vorteile: einfache Kontrolle, gute Sichtbarkeit, einfache Fehlerbehebung.
+  - Nachteile: engere Kopplung, Single Point of Failure.
+
+- **Wann Choreografie nutzen:**
+  - Bei unabhängigen Services, lose gekoppelt, Flexibilität benötigt.
+
+- **Wann Orchestrierung nutzen:**
+  - Abhängige Services, spezifische Reihenfolge, gute Überwachung.
+
+- **Mischung:**
+  - Beide Ansätze können kombiniert werden, um Flexibilität und Kontrolle zu bieten, je nach den Anforderungen der Architektur.
+
+---
+## Service Mesh
+
+Ein **Service Mesh** ist eine anpassbare Infrastrukturebene für Microservices-Anwendungen. Es gewährleistet die zuverlässige Übermittlung von Anfragen innerhalb der komplexen Dienststruktur einer cloudbasierten Anwendung. Das Service Mesh ermöglicht flexible, zuverlässige und schnelle Kommunikation zwischen den einzelnen Diensten. Es bietet Funktionen wie Diensterkennung, Lastenausgleich, Verschlüsselung, Authentifizierung, Autorisierung und mehr.[16]
 
 ---
 
@@ -579,3 +805,5 @@ Der Skalierungswürfel bietet verschiedene Ansätze zur Bewältigung der Skalier
 
 - [Quelle 1](Link zur Quelle 1)
 - [Quelle 2](Link zur Quelle 2)
+
+---
