@@ -1,6 +1,5 @@
 * Verteilte Softwaresysteme:
     Ein verteiltes System ist
-
         ein Programmsystem
         das aus Teilsystemen besteht,
         die auf mehreren lose gekoppelten Prozessoren implementiert
