@@ -19,18 +19,33 @@
   <body>
     <textarea id="source">
       class: center, middle
+      #__Kapitel 02__:
       #Software Systeme
       # &
       # Systemdesign
 
       Mattis Wellenbüscher & Marvin Petschulat
+
+      ---
+      #Lernziele:
+      
+      1. Überblick über Vertilte Softwaresysteme:
+        - Eigenschaften, Vorteile, Nachteile
+        - Welche Arten von Systemarschitekturen gibt es?
+          - Client Server, P2P, EDA, Microservices
+        -Wo werden diese Angewendet, und welche Vor- und Nachteile haben diese?
+
+      2. Überblick über Systemdesign:
+        - Api Gateways, Proxys und Load Balancer
+        - Was ist bei Skalierungsmustern zu beachten?
+          - Skalierung, Replication, Partitioning, Sharding, Load Balancing, Caching
       ---
       # Inhaltsverzeichnis
       
-      - Verteilte Softwaresysteme
-      - Systemarchitektur verteilter Softwaresysteme
-      - Systemdesign
-      - Quellen
+      - Verteilte Softwaresysteme [S. 4]
+      - Systemarchitektur verteilter Softwaresysteme [S. 17]
+      - Systemdesign [S. 38]
+      - Quellen [S. 67]
       
       ---
       
@@ -247,10 +262,10 @@
         
       - **Beispiele:** 
           - In der Webentwicklung, wo der Browser auf dem Client-Ende arbeitet und der Server die Daten bereitstellt.
-          - Kommunikation zwischen zwei Rechnern, bei der der Client Anfragen stellt und der Server Antworten liefert.
+          - Kommunikation zwischen zwei Rechnern, bei der der Client Anfragen stellt und der Server Antworten liefert. [18]
       
       - **Anwendungen:** 
-          - Von einfachen Google-Suchanfragen bis hin zu komplexen Unternehmensdatenbanksystemen.
+          - Von einfachen Google-Suchanfragen bis hin zu komplexen Unternehmensdatenbanksystemen.[19]
       ---
       
       ## Anwendungsbeispiele
@@ -272,7 +287,7 @@
       
       - **DNS-Client:**
         - Löst Computernamen in IP-Adressen auf.
-        - Hintergrund-Client im TCP/IP-Protokoll.
+        - Hintergrund-Client im TCP/IP-Protokoll. [23]
       ---
       
       ## PWA vs SPA vs MPA
@@ -284,7 +299,7 @@
         - Kann auf dem Startbildschirm eines Geräts installiert werden.
       - Verwendungsszenarien:
         - Gut geeignet für breite Anwendungsbereiche, insbesondere auf Mobilgeräten.
-        - Erhöht die Reichweite von Webanwendungen und verbessert die Benutzerbindung.
+        - Erhöht die Reichweite von Webanwendungen und verbessert die Benutzerbindung.[4]
       ---
       ### Single Page Application (SPA):
       - Merkmale:
@@ -292,7 +307,7 @@
         - Verwendet JavaScript-Frameworks wie Angular, React oder Vue.js.
         - Schnelle Benutzererfahrung durch bedarfsgesteuertes Nachladen von Daten.
       - Verwendungsszenarien:
-        - Ideal für interaktive Anwendungen, bei denen Seitenwechsel ohne Neuladen erforderlich ist, z.B. soziale Medien und E-Commerce.
+        - Ideal für interaktive Anwendungen, bei denen Seitenwechsel ohne Neuladen erforderlich ist, z.B. soziale Medien und E-Commerce. [4]
       ---
       ### Multi-Page Application (MPA):
       - Merkmale:
@@ -300,11 +315,11 @@
         - Navigation durch Klicken auf Links, separate Seitenladung vom Server.
       - Verwendungsszenarien:
         - Geeignet für traditionelle Websites und Anwendungen mit klar getrennten Inhalten und Funktionen, z.B. Unternehmenswebsites und Blogs.
-      
+        [4]
       ---
       ## Peer-to-Peer (P2P)
       
-      **Definition (Cambridge Dictionary):** Ein Computernetzwerk, bei dem jeder Computer als Server für andere fungieren kann, wodurch Dateien und Ressourcen gemeinsam genutzt werden können.[3]
+      **Definition (Cambridge Dictionary):** Ein Computernetzwerk, bei dem jeder Computer als Server für andere fungieren kann, wodurch Dateien und Ressourcen gemeinsam genutzt werden können. [20]
       
       | **Vorteile**                                    | **Nachteile**                                       |
       |-----------------------------------------------|----------------------------------------------------|
@@ -313,6 +328,7 @@
       | - Skalierbar, ausfallsicher                  | - Heterogene Leistung und Bandbreite im Netzwerk  |
       | - Dezentrale Kommunikation, schützt vor Zensur|                                                    |
       | - Potenziell sicherer als Client-Server       |                                                    |
+      [21]
       ---
       ## Anwendungsbeispiele
       
@@ -327,7 +343,7 @@
       
       - **Blockchain:** 
         - P2P-Transaktionen in Kryptowährungen über Blockchains.
-      
+        [22]
       ---
       ## Event-Typen
       
@@ -346,14 +362,14 @@
       - Enthält die vollständige Ressourcenrepräsentation aus einer RESTful-API.
       - Ideal für Integration und externe Verbraucher.
       - Verhindert Umwege zur API und reduziert Aufwand für Verbraucher.
-      
+      [25]
       ---
       ## Message Broker
       
       - **Definition:** Software, die Kommunikation und Informationsaustausch zwischen Anwendungen, Systemen und Diensten ermöglicht.
       - **Funktionen:** Übersetzt Nachrichten zwischen verschiedenen Nachrichtenprotokollen, validiert, speichert, routet und leitet sie an die richtigen Empfänger weiter.
       - **Vorteile:** Entkoppelt Prozesse und Dienste, ermöglicht Kommunikation zwischen unterschiedlichen Plattformen und Programmiersprachen.
-      
+      [24]
       ---
       ## ESB vs. Message Queue
       
@@ -363,6 +379,7 @@
       | Integrationsschnittstelle         | Entkoppelt Produzenten und Konsumenten |
       | Nachrichtenübersetzung und Weiterleitung | Einsatz von Nachrichtenbrokern (z.B. RabbitMQ) |
       | Komplex und umfangreich            | Fokussiert auf Nachrichtenverwaltung |
+      [26] [27]
       ---
       ## Anwendungsbeispiele
       
@@ -383,6 +400,7 @@
       
       - **Social Media:**
         - Benachrichtigungen, Feeds, Aktivitätsströme.
+        [4]
       ---
       # Modulare Architekturen
       1. Service oriented architecture (SOA) 
@@ -400,11 +418,13 @@
       
       **Anwendungsbeispiel:**
       - Benutzerauthentifizierung: Ein Authentifizierungsservice wird erstellt und von allen Anwendungen wiederverwendet.
+      [28]
       ---
       ## Service Discovery
       
       - **Definition:** Prozess zur Lokalisierung von Webdienstanbietern und Abruf von Dienstbeschreibungen durch Diensteregister.
       - **Zweck:** Entkoppelt Dienstnutzer von Bereitstellungstopologien, ermöglicht effiziente und flexible Kommunikation in SOA, ohne umfangreiche manuelle Konfiguration.
+      [29]
       ---
       ## Microservices
       
@@ -414,7 +434,7 @@
       **Vorteile:**
       - Vereinfachte Skalierbarkeit und verkürzte Entwicklungszeit.
       - Ermöglicht Innovation und beschleunigt die Markteinführung neuer Funktionen.
-      
+      [30]
       ---
       ## Monolith vs. Distributed Monolith vs. Microservice
       
@@ -427,6 +447,7 @@
       | Microservices-Architektur | - Unabhängige, eigenständige Komponenten mit klaren Schnittstellen |
       |                           | - Jeder Service erfüllt spezifische Funktion, unabhängige Aktualisierung und Skalierung |
       |                           | - Verbesserte Flexibilität und Verfügbarkeit der Anwendung |
+      [30]
       ---
       ## Choreography Pattern vs. Orchestration Pattern
       
@@ -441,6 +462,7 @@
         - Befehlsbasierte Kommunikation.
         - Vorteile: einfache Kontrolle, gute Sichtbarkeit, einfache Fehlerbehebung.
         - Nachteile: engere Kopplung, Single Point of Failure.
+        [31]
       
       ---
       ## Choreography Pattern vs. Orchestration Pattern
@@ -453,12 +475,12 @@
       
       - **Mischung:**
         - Beide Ansätze können kombiniert werden, um Flexibilität und Kontrolle zu bieten, je nach den Anforderungen der Architektur.
-      
+        [31]
       ---
       ## Service Mesh
       
       Ein **Service Mesh** ist eine anpassbare Infrastrukturebene für Microservices-Anwendungen. Es gewährleistet die zuverlässige Übermittlung von Anfragen innerhalb der komplexen Dienststruktur einer cloudbasierten Anwendung. Das Service Mesh ermöglicht flexible, zuverlässige und schnelle Kommunikation zwischen den einzelnen Diensten. Es bietet Funktionen wie Diensterkennung, Lastenausgleich, Verschlüsselung, Authentifizierung, Autorisierung und mehr.[16]
-      
+      [32]
       ---
       
       # Systemdesign
@@ -868,67 +890,90 @@
       Der Skalierungswürfel bietet verschiedene Ansätze zur Bewältigung der Skalierbarkeitsanforderungen von Anwendungen.
       [15]
       ---
+      class: center, middle
+      #Fragen
+      #oder
+      #Anregungen?
+      ---
+
+      #Wiederholungsbzw- Verständnisfragen:
+      1. Was ist ein verteiltes Softwaresystem?
+
+      2. Was ist der Unterschied zwischen einem Client-Server-Modell und einem Peer-to-Peer-Modell?
+
+      3. Was ist der Unterschied zwischen einem ESB und einer Message Queue?
+
+      4. Welche Skalierungsmuster kennst du?
+
+      5. Was ist der Unterschied zwischen horizontaler und vertikaler Skalierung?
+
+      ---
+
+      #Quellen
+    
+      [1] : karteikarte.com "hannemac" o.V. Definition: Verteiltes System (o. J.) https://www.karteikarte.com/card/164978/definition-verteiltes-system (11.10.2023)
       
-      # Quellen
-      [1] karteikarte.com "hannemac" o.V. Definition: Verteiltes System (o. J.) URL: https://www.karteikarte.com/card/164978/definition-verteiltes-system (abgerufen am 11.10.2023)
-
-        [2] Kev Z. Was ist ein verteiltes System? (o. J.) URL: https://www.atlassian.com/de/microservices/microservices-architecture/distributed-architecture (abgerufen am 11.10.2023)
-
-        [3] karteikarte.com o.V hannemac Vorteile und Nachteile verteilter Systeme (o.J.) URL: https://www.karteikarte.com/card/164978/definition-verteiltes-system (abgerufen am 11.10.2023)
-
-        [4] ChatGPT by OpenAI. URL: https://chat.openai.com/
-
-        [5] Cambridge Dictionary. "peer-to-peer." Cambridge English Dictionary, URL: https://dictionary.cambridge.org/dictionary/english/peer-to-peer (abgerufen am 11.10.2023)
-
-        [6] FlorianDalwigk. "Peer-To-Peer (einfach erklärt) | P2P (einfach erklärt)" YouTube, hochgeladen von FlorianDalwigk, hochgeladen am [07.11.2022], URL: https://www.youtube.com/watch?v=QR2Y2bdDWoM (abgerufen am 11.10.2023)
+      [2]: Kev Z. Was ist ein verteiltes System? (o. J.) https://www.atlassian.com/de/microservices/microservices-architecture/distributed-architecture (11.10.2023)
+      
+      [3]: karteikarte.com o.V hannemac Vorteile und Nachteile verteilter Systeme (o.J.) https://www.karteikarte.com/card/164978/definition-verteiltes-system (11.10.2023)
+      
+      [4]: Chat GPT https://chat.openai.com/
+      
+      [5]: vsis-www.informatik.uni-hamburg.de o. V. (o. J.) https://vsis-www.informatik.uni-hamburg.de/oldServer/teaching/ws-11.12/vis/folien/01-GRUNDL.pdf (11.10.2023)
+      
+      [6]: Arslan Ahmad Load Balancer vs. Reverse Proxy vs. API Gateway (17.05.2023) https://medium.com/geekculture/load-balancer-vs-reverse-proxy-vs-api-gateway-e9ec5809180c#:~:text=Remember%20that%20load%20balancers%20distribute,these%20components%20for%20optimal%20results. (12.10.2023)
       ---
-        [7] HubSpot. "Peer-to-Peer (P2P): Definition, Funktionsweise und Beispiele" HubSpot Blog, URL: https://blog.hubspot.de/website/peer-to-peer (abgerufen am 11.10.2023)
-
-        [8] IONOS. "Was ist ein Client?" IONOS Digital Guide, URL: https://www.ionos.de/digitalguide/server/knowhow/was-ist-ein-client/ (abgerufen am 11.10.2023)
-
-        [9] IBM. "Message Brokers." IBM Topics, URL: https://www.ibm.com/topics/message-brokers#:~:text=A%20message%20broker%20is%20software,messages%20between%20formal%20messaging%20protocols. (abgerufen am 11.10.2023)
-
-        [10] Frank de Jonge. "The Different Types of Events in Event-Driven Systems." Frank de Jonge's Blog, URL: https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/#:~:text=Three%20event%20archetypes&text=These%20types%20of%20events%20are,The%20RESTful%20or%20%22Fat%22%20Event (abgerufen am 11.10.2023)
-
-        [11] LoiLiangYang. "Enterprise Service Bus" YouTube, hochgeladen von LoiLiangYang, URL: https://www.youtube.com/watch?v=VHzWswQNtgk&ab_channel=LoiLiangYang (abgerufen am 11.10.2023)
-
-        [12] CloudAMQP. "What is Message Queuing?" CloudAMQP Blog, URL: https://www.cloudamqp.com/blog/what-is-message-queuing.html (abgerufen am 11.10.2023)
+      [7]: theastrologypage.com o.V (2023) https://theastrologypage.com/system-design (12.10.2023)
+      
+      [8]: Pulkit Gupta System Design: Database Replication (Part 1) (02.04.2020) https://medium.com/@pulkitent/system-design-database-replication-part-1-3dcf4a300db1 (12.10.2023)
+      
+      [9]: jguamie o.V Partitioning (2018) https://github.com/jguamie/system-design/blob/master/notes/partitioning.md (13.10.2023)
+      
+      [10]: hazelcast.com o.V What is Sharding? (o. J.) https://hazelcast.com/glossary/sharding/ (13.10.2023)
+      
+      [11]: ovhcloud.com o.V. Was ist Loadbalancing? (o. J.)https://www.ovhcloud.com/de/public-cloud/what-load-balancing/#:~:text=Die%20Technologie%20des%20Loadbalancing%20(Lastenverteilung,Effizienz%20und%20Kapazit%C3%A4t%20der%20Infrastruktur.
+      
+      [12]: aws.amazon.com o.V Was ist Lastenverteilung? (o. J.) https://aws.amazon.com/de/what-is/load-balancing/ (13.10.2023)
+      
+      [13]: Karan Pratap Singh Caching (03.09.2022) https://dev.to/karanpratapsingh/system-design-caching-18j4 (13.10.2023)
+      
+      [14]: docs.gigaspaces.com o.V. Local Cache (o. J.) https://docs.gigaspaces.com/dev-java/local-cache.html (13.10.2023)
       ---
-        [13] Amazon Web Services (AWS). "Service-Oriented Architecture (SOA)." AWS, URL: https://aws.amazon.com/de/what-is/service-oriented-architecture/ (abgerufen am 11.10.2023)
-
-        [14] Coforge. "SOA Service Discovery, Repository and Service Discovery." Coforge Blog, URL: https://www.coforge.com/blog/soa-service-registry/repository-and-service-discovery#:~:text=SOA%20Service%20Discovery,that%20have%20been%20previously%20published. (abgerufen am 11.10.2023)
-
-        [15] Amazon Web Services (AWS). "Microservices." AWS, URL: https://aws.amazon.com/de/microservices/ (abgerufen am 14. Oktober 2023)
-
-        [16] Camunda. "Orchestration vs. Choreography." Camunda Blog, URL: https://camunda.com/blog/2023/02/orchestration-vs-choreography/ (abgerufen am 14. Oktober 2023)
-
-        [17] TriggerMesh. "What Is a Service Mesh?" TriggerMesh FAQ, URL: https://www.triggermesh.com/faq/what-is-a-service-mesh (abgerufen am 14. Oktober 2023)
-
-        [18] vsis-www.informatik.uni-hamburg.de o. V. (o. J.) URL: https://vsis-www.informatik.uni-hamburg.de/oldServer/teaching/ws-11.12/vis/folien/01-GRUNDL.pdf (abgerufen am 11.10.2023)
+      [15]: hazelcast.com o.V. What Is a Distributed Cache? (o. J.) https://hazelcast.com/glossary/distributed-cache/ (13.10.2023)
+      
+      [16]: docs.trafficserver.apache.org o.V. Hierarchical Caching (o. J.) https://docs.trafficserver.apache.org/en/9.0.x/admin-guide/configuration/hierarchical-caching.en.html (13.10.2023)
+      
+      [17]: Karan Sharma The Scale Cube (11.07.2023) https://cserkaran.medium.com/the-scale-cube-d84ca0c2e900 (13.10.2023)
+      
+      [18] : thenativewebGmbH. "Client-Server-Architekturen // deutsch" YouTube, hochgeladen von thenativewebGmbH, hochgeladen am [16.09.2020], URL: https://www.youtube.com/watch?v=GqjLcAbB5qE&ab_channel=thenativewebGmbH (abgerufen am 11.10.2023)
+      
+      [19] : IT&Medieneinfacherklärt. "CLIENT-SERVER-MODELL einfach erklärt!" YouTube, hochgeladen von IT&Medieneinfacherklärt,hochgeladern am [27.04.2020] URL: https://www.youtube.com/watch?v=LwziP-ZrbUs (abgerufen am 11.10.2023)
+      
+      [20] : Cambridge Dictionary. "peer-to-peer." Cambridge English Dictionary, URL: https://dictionary.cambridge.org/dictionary/english/peer-to-peer (abgerufen am 11.10.2023)
       ---
-        [19] theastrologypage.com o.V (2023) URL: https://theastrologypage.com/system-design (abgerufen am 12.10.2023)
-
-        [20] nOps o.V Horizontal vs Vertical scaling: An in-depth Guide (20.09.2023) URL: https://www.nops.io/blog/horizontal-vs-vertical-scaling/#:~:text=The%20primary%20difference%20between%20horizontal,.)%20to%20an%20existing%20machine. (abgerufen am 12.10.2023)
-
-        [21] Pulkit Gupta System Design: Database Replication (Part 1) (02.04.2020) URL: https://medium.com/@pulkitent/system-design-database-replication-part-1-3dcf4a300db1 (abgerufen am 12.10.2023)
-
-        [22] jguamie o.V Partitioning (2018) URL: https://github.com/jguamie/system-design/blob/master/notes/partitioning.md (abgerufen am 13.10.2023)
-
-        [23] hazelcast.com o.V What is Sharding? (o. J.) URL: https://hazelcast.com/glossary/sharding/ (abgerufen am 13.10.2023)
-
-        [24] ovhcloud.com o.V. Was ist Loadbalancing? (o. J.) URL: https://www.ovhcloud.com/de/public-cloud/what-load-balancing/#:~:text=Die%20Technologie%20des%20Loadbalancing%20(Lastenverteilung,Effizienz%20und%20Kapazit%C3%A4t%20der%20Infrastruktur.
+      [21] : FlorianDalwigk. "Peer-To-Peer (einfach erklärt) | P2P (einfach erklärt)" YouTube, hochgeladen von FlorianDalwigk, hochgeladen am [07.11.2022], URL: https://www.youtube.com/watch?v=QR2Y2bdDWoM (abgerufen am 11.10.2023)
+      
+      [22] : HubSpot. "Peer-to-Peer (P2P): Definition, Funktionsweise und Beispiele" HubSpot Blog, URL: https://blog.hubspot.de/website/peer-to-peer (abgerufen am 11.10.2023)
+      
+      [23] : IONOS. "Was ist ein Client?" IONOS Digital Guide, URL: https://www.ionos.de/digitalguide/server/knowhow/was-ist-ein-client/ (abgerufen am 11.10.2023)
+      
+      [24] : IBM. "Message Brokers." IBM Topics, URL: https://www.ibm.com/topics/message-brokers#:~:text=A%20message%20broker%20is%20software,messages%20between%20formal%20messaging%20protocols. (abgerufen am 11.10.2023)
+      
+      [25] : Frank de Jonge. "The Different Types of Events in Event-Driven Systems." Frank de Jonge's Blog, URL: https://blog.frankdejonge.nl/the-different-types-of-events-in-event-driven-systems/#:~:text=Three%20event%20archetypes&text=These%20types%20of%20events%20are,The%20RESTful%20or%20%22Fat%22%20Event (abgerufen am 11.10.2023)
+      
+      [26] : LoiLiangYang. "Enterprise Service Bus" YouTube, hochgeladen von LoiLiangYang, URL: https://www.youtube.com/watch?v=VHzWswQNtgk&ab_channel=LoiLiangYang (abgerufen am 11.10.2023)
       ---
-        [25] aws.amazon.com o.V Was ist Lastenverteilung? (o. J.) URL: https://aws.amazon.com/de/what-is/load-balancing/ (abgerufen am 13.10.2023)
-
-        [26] Karan Pratap Singh Caching (03.09.2022) URL: https://dev.to/karanpratapsingh/system-design-caching-18j4 (abgerufen am 13.10.2023)
-
-        [27] docs.gigaspaces.com o.V. Local Cache (o. J.) URL: https://docs.gigaspaces.com/dev-java/local-cache.html (abgerufen am 13.10.2023)
-
-        [28] hazelcast.com o.V. What Is a Distributed Cache? (o. J.) URL: https://hazelcast.com/glossary/distributed-cache/ (abgerufen am 13.10.2023)
-
-        [29] docs.trafficserver.apache.org o.V. Hierarchical Caching (o. J.) URL: https://docs.trafficserver.apache.org/en/9.0.x/admin-guide/configuration/hierarchical-caching.en.html (abgerufen am 13.10.2023)
-
-        [30] Karan Sharma The Scale Cube (11.07.2023) URL: https://cserkaran.medium.com/the-scale-cube-d84ca0c2e900 (abgerufen am 13.10.2023)
+      [27] : CloudAMQP. "What is Message Queuing?" CloudAMQP Blog, URL: https://www.cloudamqp.com/blog/what-is-message-queuing.html (abgerufen am 11.10.2023)
+      
+      [28] : Amazon Web Services (AWS). "Service-Oriented Architecture (SOA)." AWS, URL: https://aws.amazon.com/de/what-is/service-oriented-architecture/ (abgerufen am 11.10.2023)
+      
+      [29] : Coforge. "SOA Service Discovery, Repository and Service Discovery." Coforge Blog, URL: https://www.coforge.com/blog/soa-service-registry/repository-and-service-discovery#:~:text=SOA%20Service%20Discovery,that%20have%20been%20previously%20published. (abgerufen am 11.10.2023)
+      
+      [30] : Amazon Web Services (AWS). "Microservices." AWS, URL: https://aws.amazon.com/de/microservices/ (abgerufen am 14. Oktober 2023)
+      
+      [31] : Camunda. "Orchestration vs. Choreography." Camunda Blog, URL: https://camunda.com/blog/2023/02/orchestration-vs-choreography/ (abgerufen am 14. Oktober 2023)
+      
+      [32] : TriggerMesh. "What Is a Service Mesh?" TriggerMesh FAQ, URL: https://www.triggermesh.com/faq/what-is-a-service-mesh (abgerufen am 14. Oktober 2023)
       ---
 
     </textarea>
