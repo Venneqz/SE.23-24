@@ -19,6 +19,291 @@ class: center, middle
 - Tools
 - Quellen
 
+## Version Control, auch als Quellcodeverwaltung bezeichnet
+
+- Praxis, Änderungen am Software-Code zu verfolgen und zu verwalten.
+- Hilft Software-Teams in beschleunigten Entwicklungsumgebungen.
+- Vorteilhaft für DevOps-Teams zur Verkürzung der Entwicklungszeit.
+- Ermöglicht Fehlerbehebung durch Zurückgreifen auf frühere Code-Versionen.
+- Effiziente Workflow-Verwaltung.
+[1]
+---
+
+## Centralized vs Distributed Version Control
+
+- Zentralisierte Kontrolle: Abhängig von einem zentralen Server, einfach einzurichten.
+- Nachteile: Einzelner Serverausfall, Schwierigkeiten beim Merging und Branching.
+- Verteilte Kontrolle: Bietet multiple Backups, Offline-Commits und schnelles Branching.
+- Git ist ein bekanntes Beispiel für verteilte Versionskontrolle.
+[2]
+---
+
+## Git
+
+- Weitverbreitetes modernes Versionskontrollsystem.
+- Entwickelt von Linus Torvalds, dem Schöpfer des Linux-Kernels.
+- Verteilungsarchitektur ermöglicht vollständige Historie der Änderungen in Arbeitskopien.
+- Schwerpunkt auf Leistung, Sicherheit und Flexibilität.
+[3]
+---
+
+## Remote Repositories
+
+- Versionen des Projekts, im Internet oder Netzwerk gehostet.
+- Schreibgeschützt oder schreibgeschützt.
+- Verwaltung von remote Repositories: Hinzufügen, Entfernen, Verwalten von Branches, Definition als tracked/untracked.
+[4]
+---
+
+## Visualisierung von relevanten git-Kommandos und -Workflows
+
+- `git commit`: Aktuelle Änderungen im Arbeitsverzeichnis in das lokale Repository aufnehmen.
+- `git branch`: Listet vorhandene Branches auf und zeigt den aktuellen Branch an.
+- `git checkout`: Wechseln zwischen Branches oder Wiederherstellen von Commits/Dateiversionen.
+- `git checkout -b`: Erstellen und Wechseln zu einem neuen Branch.
+- `git reset`: Rückgängig Machen von Commits, indem der HEAD/Branch auf einen früheren Commit zurückgesetzt wird.
+- `git revert`: Erzeugt neuen Commit, um Änderungen eines früheren Commits rückgängig zu machen.
+- `git merge`: Integriert Änderungen aus einem Branch in den aktuellen Branch.
+- `git rebase`: Neuorganisation der Commit-Historie durch Anwenden von Commits aus einem Branch auf einen anderen.
+- `git fetch`: Herunterladen neuer Änderungen aus einem entfernten Repository.
+- `git pull`: Kombiniert `git fetch` und `git merge`, um Änderungen aus einem entfernten Repository in den lokalen Branch zu integrieren.
+- `git push`: Hochladen lokaler Commits in ein entferntes Repository.
+- `git tag`: Erstellen von Tags zur Markierung bestimmter Commit-Versionen in der Historie.
+[5] [6]
+---
+
+## Sequenzdiagramm für git data transfer commands
+
+- ![](media\git-transport.jpg) [7]
+
+---
+## Multirepos vs. Monorepos
+
+Beide Ansätze, Monorepo und Multi-Repo, zielen darauf ab, Code effizient zu verwalten, aber ihr Hauptunterschied liegt im Zeitpunkt, zu dem Entscheidungen getroffen werden. Bei Multi-Repo werden Bibliotheken unabhängig voneinander verwaltet, was es Teams ermöglicht, schnell zu arbeiten, jedoch auf Kosten möglicher Divergenz. In einem Monorepo müssen Teams zusammenarbeiten und alle Bibliotheken gleichzeitig anpassen, um Konflikte zu vermeiden, was die Geschwindigkeit beeinträchtigen kann, aber die Code-Konsistenz gewährleistet. Monorepo fördert eine Kultur der Achtsamkeit, während Multi-Repo eine Kultur des schnellen Fortschritts begünstigt. [8]
+
+---
+
+### Submodules
+
+Git-Submodule ermöglichen es, ein Git-Repository als Unterverzeichnis eines anderen Git-Repositorys zu behalten. Git-Submodule sind einfach eine Referenz auf ein anderes Repository zu einem bestimmten Zeitpunkt. Sie ermöglichen einem Git-Repository, die Versionshistorie von externem Code einzubeziehen und zu verfolgen. [9]
+
+---
+
+### Pull Requests
+
+In ihrer einfachsten Form sind Pull Requests ein Mechanismus, mit dem ein Entwickler Teammitglieder darüber benachrichtigt, dass sie eine Funktion abgeschlossen haben. Sobald ihr Feature-Branch bereit ist, reicht der Entwickler über ihr Bitbucket-Konto einen Pull Request ein. Dies informiert alle Beteiligten darüber, dass sie den Code überprüfen und in den Haupt-Branch überführen müssen.
+
+Aber der Pull Request ist mehr als nur eine Benachrichtigung - es handelt sich um ein dediziertes Forum zur Diskussion der vorgeschlagenen Funktion. Wenn es Probleme mit den Änderungen gibt, können Teammitglieder Feedback im Pull Request hinterlassen und die Funktion sogar durch das Einreichen. [10]
+
+---
+## Branching Strategies
+
+Release Branching:
+- Jede Veröffentlichung in einem eigenen Branch.
+- Änderungen in Veröffentlichungs- und Haupt-Branch erforderlich.
+- Kann zu erhöhtem Aufwand und Verwirrung führen.
+
+Feature Branching:
+- Features in eigenen Branches entwickelt und mit Feature Flags gesteuert.
+- Ermöglicht schrittweise Bereitstellung und bessere Kontrolle.
+
+Task Branching:
+- Fokussiert auf Aufgabenverwaltung, erstellt Branch für jede Aufgabe.
+- Transparente Zuordnung von Änderungen zu Aufgaben.
+- Besonders für agile Entwicklung geeignet. [11]
+
+---
+
+### Git Flow
+
+- "Master" (produktionsbereiter Code) und "develop" (neuester Code) Branches.
+- Feature-, Release- und Hotfix-Branches.
+
+### Github Flow
+
+- Vereinfachte Version mit nur einem "main"-Branch.
+- Feature-Branches werden nach Abschluss gemerged.
+
+### Trunk-Based Development
+
+- Ein einzelner "trunk"-Branch enthält aktuellen Code.
+- Kurzlebige Feature-Branches, die zurückgemerged werden.
+
+### Feature Branching
+
+- Separater Branch für jede Funktion, Rückmerge nach Fertigstellung.
+
+### Task Branching
+
+- Ein Branch pro Aufgabe, Mergen nach Aufgabenabschluss.
+
+### Clear Framework Branching
+
+- Festgelegte Regeln und Workflows für Features, Releases und Bugfixes. Erfordert hohe Koordination. [12]
+
+---
+
+### Trunk-based Development
+
+- Kleine, häufige Updates direkt im Haupt-Branch integriert.
+- Beschleunigt Integration und ermöglicht CI/CD.
+- Steigert Softwareauslieferung und Leistung.
+- Unterschied zum strengeren Gitflow-Modell, das Änderungen im Hauptcode begrenzt.
+[13]
+---
+
+### Long-lived Branches
+
+- Separate Branches für neue Funktionen oder größere Änderungen.
+- Unabhängig von Hauptentwicklungslinie, über längere Zeiträume gepflegt.
+- Gemerged nach Überprüfung und Konfliktlösung.
+- In Open-Source-Software verbreitet, bei fehlendem Zugriff auf die Hauptlinie.
+- Dauer hängt von Aktivität im Code ab, nicht von Kalenderzeit. [14]
+
+---
+## Git Flow
+
+- Beliebte Branching-Strategie.
+- Enthält "master"-Branch (produktionsbereiter Code) und "develop"-Branch (neuester Code).
+- Feature-Branches für spezifische Funktionen, die zurück in "develop" gemerged werden.
+- Release-Branches und Hotfix-Branches für Veröffentlichungen und Fehlerkorrekturen. [12]
+
+---
+
+### Feature, develop, release, hotfix und master branch
+
+- Feature Branch: Abzweigung vom develop-Branch für neue Funktionen. Wird zurück in den develop-Branch gemerged.
+- Develop Branch: Hauptentwicklungs-Branch, von dem Feature-Branches abgezweigt und zurückgeführt werden.
+- Release Branch: Vorbereitung auf Veröffentlichung, Abzweigung vom develop-Branch und Rückführung in develop und master.
+- Hotfix Branch: Entwicklung von Hotfix, Abzweigung vom master-Branch und Rückführung in develop und master.
+- Master Branch: Haupt-Branch, von dem Release-Branches abgezweigen und zurückgeführt werden. [0]
+
+---
+
+### Github Flow
+
+- Vereinfachte Version von Git Flow.
+- Ein einziger langfristiger "main"-Branch (produktionsbereiter Code).
+- Feature-Branches für spezifische Funktionen, die zurück in "main" gemerged werden.
+- Keine Release-Branches oder Hotfix-Branches. [12]
+
+---
+## Merging Strategies
+
+- Ein Merge in Git tritt auf, wenn zwei Branches kombiniert werden.
+- Git sucht nach einem gemeinsamen Basis-Commit zwischen diesen Branches und erstellt dann einen Merge-Commit.
+- Die Auswahl der Merge-Strategie erfolgt in der Regel automatisch, basierend auf den gegebenen Branches. [15]
+
+---
+
+### Merge Commit
+
+- Beim Mergen von Commits in einem Pull Request auf GitHub.com werden alle Commits aus dem Featurebranch in den Basisbranch in einem zusätzlichen Merge-Commit zusammengeführt.
+- Standardmäßig mit der --no-ff-Option.
+- Schreibberechtigungen im Repository erforderlich.
+- Diagramm zeigt den Standardablauf für Merge- und Commitvorgänge. [16]
+
+### Squash and Merge
+
+- Beim Squashen und Mergen von Commits in einem GitHub-Pull Request werden alle einzelnen Commits zu einem einzigen zusammengefasst und in den Hauptbranch integriert.
+- Schreibberechtigungen und Einstellung zur Unterstützung des Squash-Mergens erforderlich.
+- Schafft einen sauberen Git-Verlauf.
+- Diagramm zeigt den Prozess des Commit-Squashings. [16]
+
+### Rebase and Merge
+
+- "Rebase und Merge" ermöglicht das Hinzufügen von Commits aus einem Feature-Branch einzeln und ohne einen separaten Merge-Commit in den Haupt-Branch.
+- Führt zu einem linearen Projektverlauf.
+- Unterschiedliches Verhalten von "Rebase und Merge" auf GitHub im Vergleich zu "git rebase" außerhalb von GitHub.
+- Schreibberechtigungen und aktivierte Option "Rebase und Merge" im Repository erforderlich.
+- Fälle, in denen automatisches "Rebase und Merge" auf GitHub.com nicht möglich ist, erfordern manuelles Rebase in der Befehlszeile. [16]
+
+---
+## Aufbau und Inhalt von Commit Messages
+
+Commit-Nachrichten sollten bestimmten Richtlinien folgen:
+
+- Eine kurze Zusammenfassung (maximal 72 Zeichen) und ein detaillierter erläuternder Text (maximal 72 Zeichen pro Zeile).
+
+- Eine leere Zeile, die die Zusammenfassung vom Haupttext trennt, es sei denn, der Haupttext fehlt.
+
+- Die erste Zeile ist die wichtigste und sollte den Satz "Wenn angewandt, wird dieser Commit <Ihre Betreffzeile hier>" vervollständigen. Die Betreffzeile sollte großgeschrieben und im Imperativ geschrieben sein.
+
+- Beschreibung des Ziels oder des Grundes für die Änderung in klarem Englisch mit einem Präfix, das auf die Komponente oder die Aufgaben-ID hinweist.
+
+- Wenn sich der Commit auf ein Problem bezieht, sollte dies in der Nachricht vermerkt werden.
+
+- Kein Punkt am Ende der Nachricht, und jede Absatz sollte großgeschrieben sein.
+
+- Keine patchset-spezifischen Kommentare und keine Beschreibung eventueller Einschränkungen des aktuellen Codes.
+
+- Weitere Absätze sollten nach leeren Zeilen folgen; Aufzählungspunkte sind in Ordnung.
+
+- Konsistente Wortwahl zur Beschreibung von Änderungen ist wichtig.
+
+- Commit-Nachrichten-Linting kann konfiguriert werden, um Standards durchzusetzen und mit semantischer Versionierung übereinzustimmen.
+
+Das Schreiben guter Commit-Nachrichten erleichtert die Kommunikation und Zusammenarbeit im Team. [17]
+
+---
+## AI-driven development
+
+---
+
+### Conversational AI vs. Generative AI
+
+- Conversational AI-Systeme sind auf die Kommunikation mit Benutzern spezialisiert und werden auf kleineren Dialogdatensätzen trainiert.
+- Ihr Hauptzweck ist die Interaktion zwischen Menschen und Maschinen, wobei die Generierung von Antworten nur ein Nebenprodukt ist.
+
+- Generative KI-Tools sind darauf ausgerichtet, originale Inhalte zu erstellen und lernen aus Datenmustern.
+- Ihr Hauptzweck ist die Generierung von einzigartigem Inhalt in verschiedenen Formaten, während die Kommunikation mit Benutzern nicht ihre Hauptfunktion ist.
+
+Generative KI ist flexibler und vielseitiger in Bezug auf die Art des erstellten Inhalts. [18]
+
+---
+
+### Prompt engineering
+
+Prompt Engineering ist der Prozess der Erstellung von Prompts, die die gewünschten Ergebnisse erzielen.
+Es ist ein iterativer Prozess, der die Erstellung, das Testen und die Anpassung von Prompts umfasst, um die gewünschten Ergebnisse zu erzielen. [0]
+
+---
+
+### ChatGPT, Github Copilot
+
+- ChatGPT ist ein leistungsstarkes KI-Modell von OpenAI, das menschenähnlichen Text auf natürliche Weise generieren kann.
+- Es ist ein nützliches Werkzeug für die Texterstellung, Recherche und Unterstützung bei einer Vielzahl von Aufgaben.
+
+- GitHub Copilot ist eine Erweiterung für Visual Studio Code, die von GitHub in Zusammenarbeit mit OpenAI entwickelt wurde.
+- Sie bietet Unterstützung für Entwickler, indem sie intelligente Code-Vervollständigungen, -vorschläge und -dokumentationen bietet.
+- GitHub Copilot ist ein wertvolles Werkzeug für die Softwareentwicklung und kann die Produktivität von Entwicklern erheblich steigern. [0]
+
+---
+
+### Best Practices für "Googling"
+
+1. Verwenden Sie Anführungszeichen, um nach exakten Phrasen oder Namen zu suchen.
+
+2. Schließen Sie bestimmte Wörter aus, indem Sie das Minuszeichen verwenden.
+
+3. Mit "OR" können Sie nach einem von zwei Begriffen suchen.
+
+4. Verwenden Sie die Tilde (~) für Synonyme in der Suche.
+
+5. Nutzen Sie "site:" gefolgt von einer Domain, um innerhalb einer bestimmten Website zu suchen.
+
+6. Das Sternchen (*) dient als Platzhalter für Wörter oder Teile von Wörtern.
+
+7. Suchen Sie nach Ergebnissen in einem bestimmten Wertebereich mit "..".
+
+8. Suchen Sie gezielt im Text, im Titel oder in der URL einer Seite mit Qualifikatoren wie "inurl:", "intext:" und "intitle:".
+
+9. Finden Sie ähnliche Websites mit dem "related:"-Qualifikator.
+
+10. Kombinieren Sie diese Techniken nach Bedarf, um Ihre Suche zu verfeinern.
+
+Diese Tipps helfen, genauere und relevantere Suchergebnisse zu erzielen. [19]
+
 ---
 
 # Code reading
@@ -1132,129 +1417,169 @@ Die Auswahl eines Bug- und Arbeitsverfolgungstools sollte auf den spezifischen A
 ---
 
 # Quellen
+  [0]: OpenAI GPT-3 Model. ChatGPT. URL: <https://platform.openai.com/docs/guides/chat> (abgerufen am 17. Oktober 2023)
 
-1. [Turing - Start Reading Code the Right Way](https://www.turing.com/kb/start-reading-code-the-right-way)
-   - **Autor:** Nicht angegeben
-   - **Veröffentlichungsdatum:** Nicht angegeben
-   - **Abrufdatum:** 19. Oktober 2023
+  [1]: Atlassian. "What is Version Control?" Atlassian Git Tutorial, URL: <https://www.atlassian.com/git/tutorials/what-is-version-control> (abgerufen am 17. Oktober 2023)
 
-2. [Testsigma - How to Write a Good Bug Report](https://testsigma.com/blog/how-to-write-a-good-bug-report-some-tips/#How_to_Write_a_Bug_Report)
-   - **Autor:** Atif Beg
-   - **Veröffentlichungsdatum:** May 23, 2023
-   - **Abrufdatum:** 19. Oktober 2023
+  [2]: GitLab Inc. "Why it’s time to move to a Distributed Version Control System." GitLab Blog, URL: <https://about.gitlab.com/blog/2020/11/19/move-to-distributed-vcs/> (abgerufen am 17. Oktober 2023)
 
-3. [Chat GPT](https://chat.openai.com/)
-   - **Autor:** Nicht angegeben
-   - **Veröffentlichungsdatum:** Nicht anwendbar
-   - **Abrufdatum:** 19. Oktober 2023
+  [3]: Atlassian. "What is Git? | Atlassian Git Tutorial." Atlassian, URL: <https://www.atlassian.com/git/tutorials/what-is-git> (abgerufen am 17. Oktober 2023)
 
-4. [LinkedIn - Root Cause Analysis You Must Know](https://www.linkedin.com/pulse/all-rcaroot-cause-analysis-you-must-know-dhirendra-patel)
-   - **Autor:** Dhirendra Patel
-   - **Veröffentlichungsdatum:** 30. Dez. 2022
-   - **Abrufdatum:** 19. Oktober 2023
+  [4]: Git - Working with Remotes. "Git Basics - Working with Remotes." git-scm.com, URL: <https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes#:~:text=Remote%20repositories%20are%20versions%20of,or%20read%2Fwrite%20for%20you> (abgerufen am 17. Oktober 2023
+  
+  [5]: Visual Git Guide. "Visual Git Guide." marklodato.github.io, URL: <https://marklodato.github.io/visual-git-guide/index-en.html> (abgerufen am 17. Oktober 2023)
 
-5. [Testsigma - Difference Between Testing and Debugging](https://testsigma.com/blog/difference-between-testing-and-debugging/#Difference_Between_Testing_and_Debugging)
-   - **Autor:** Kiruthika Devaraj
-   - **Veröffentlichungsdatum:** July 15, 2023
-   - **Abrufdatum:** 19. Oktober 2023
+  [6]: "Explain Git with D3." onlywei.github.io, URL: <https://onlywei.github.io/explain-git-with-d3/#> (abgerufen am 17. Oktober 2023)
 
-6. [Rubber Duck Debugging](https://rubberduckdebugging.com/)
-   - **Autor:** Nicht angegeben
-   - **Veröffentlichungsdatum:** Nicht angegeben
-   - **Abrufdatum:** 19. Oktober 2023
+  [7]: blog.osteele.com. "My Git Workflow" URL: https://blog.osteele.com/2008/05/my-git-workflow/ (abgerufen am 17. Oktober 2023)
 
-7. [Undo - 6 Things About Time-Travel Debugging](https://undo.io/resources/6-things-time-travel-debugging#:~:text=Time%20travel%20debugging%20(aka%20reverse,to%20inspect%20the%20program%20state.)
-   - **Autor:** Nicht angegeben
-   - **Veröffentlichungsdatum:** Nicht angegeben
-   - **Abrufdatum:** 19. Oktober 2023
+  [8]: kinsta.com. "Monorepo vs. Multi-Repo: Pros and Cons" URL: https://kinsta.com/blog/monorepo-vs-multi-repo/ (abgerufen am 17. 
+  Oktober 2023)
 
-8. [Coralogix - Tracing vs. Logging: What to Know](https://coralogix.com/blog/tracing-vs-logging-what-to-know/)
-   - **Autor:** Tobias Schlichtmeier
-   - **Veröffentlichungsdatum:** 14. Mai 2021
-   - **Abrufdatum:** 19. Oktober 2023
+  [9]: atlassian.com. "Git Submodules" URL: https://www.atlassian.com/git/tutorials/git-submodule (abgerufen am 17. Oktober 2023)
+  
+  [10]: atlassian.com. "Making a Pull Request" URL: https://www.atlassian.com/git/tutorials/making-a-pull-request (abgerufen am 17. Oktober 2023)
 
-9. [Elektroniknet - Vier Tools im Check](https://www.elektroniknet.de/embedded/entwicklungstools/vier-tools-im-check.186375.html)
-   - **Autor:** Nicht angegeben
-   - **Veröffentlichungsdatum:** Nicht angegeben
-   - **Abrufdatum:** 19. Oktober 2023
+  [11]: atlassian.com. "Branching" URL: https://www.atlassian.com/agile/software-development/branching (abgerufen am 17. Oktober 2023)
 
-10. [Guru99 - Agile Testing: A Beginner's Guide](https://www.guru99.com/agile-testing-a-beginner-s-guide.html)
-    - **Autor:** Thomas Hamilton
-    - **Veröffentlichungsdatum:** October 7, 2023
-    - **Abrufdatum:** 19. Oktober 2023
+  [12]: mermaid.js. "Mermaid GitGraph Syntax" URL: https://mermaid.js.org/syntax/gitgraph.html (abgerufen am 17. Oktober 2023)
 
-11. [BrowserStack - TDD vs. BDD vs. ATDD](https://www.browserstack.com/guide/tdd-vs-bdd-vs-atdd)
-    - **Autor:** Jash Unadkat
-    - **Veröffentlichungsdatum:** June 15, 2023
-    - **Abrufdatum:** 19. Oktober 2023
+  [13]: atlassian.com. "Trunk Based Development" URL: https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development (abgerufen am 17. Oktober 2023)
 
-12. [LinkedIn - How Do You Use Test Doubles, Mocks, Stubs?](https://www.linkedin.com/advice/3/how-do-you-use-test-doubles-mocks-stubs)
+  [14]: ardalis.com. "Trunk-Based Development vs. Long-Lived Feature Branches" URL: https://ardalis.com/trunk-based-development-vs-long-lived-feature-branches/#:~:text=What%20is%20Long%2DLived%20Feature,developers%20to%20work%20in%20isolation. (abgerufen am 17. Oktober 2023)
+
+  [15]: atlassian.com. "Using branches" URL: https://www.atlassian.com/git/tutorials/using-branches/merge-strategy (abgerufen am 17. Oktober 2023)
+
+  [16]: docs.github.com. "Incorporating changes from a pull request" URL: https://docs.github.com/de/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges (abgerufen am 17. Oktober 2023)
+
+  [17]: gist.github.com. "Git Cheatsheet" URL: https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53 (abgerufen am 17. Oktober 2023)
+
+  [18]: aimultiple.com. "Conversational AI vs Generative AI: What’s the Difference?" URL: https://research.aimultiple.com/conversational-ai-vs-generative-ai/ (abgerufen am 17. Oktober 2023)
+
+  [19]: linkedin.com. "Tips and Tricks for Better Googling" URL: https://www.linkedin.com/pulse/tips-tricks-better-googling-javid-ahmadi (abgerufen am 17. Oktober 2023)
+
+  20. [Turing - Start Reading Code the Right Way](https://www.turing.com/kb/start-reading-code-the-right-way)
     - **Autor:** Nicht angegeben
     - **Veröffentlichungsdatum:** Nicht angegeben
     - **Abrufdatum:** 19. Oktober 2023
 
-13. [Jesus Valera Reales - Testing With Test Doubles](https://jesusvalerareales.com/testing-with-test-doubles/#:~:text=The%20five%20types%20of%20Test,how%20it%20will%20be%20used.)
-    - **Autor:** Jesus Valera Reales
-    - **Veröffentlichungsdatum:** June 11, 2020
+  21. [Testsigma - How to Write a Good Bug Report](https://testsigma.com/blog/how-to-write-a-good-bug-report-some-tips/#How_to_Write_a_Bug_Report)
+    - **Autor:** Atif Beg
+    - **Veröffentlichungsdatum:** May 23, 2023
     - **Abrufdatum:** 19. Oktober 2023
 
-14. [it-agile - Was ist Pair Programming?](https://www.it-agile.de/agiles-wissen/agile-entwicklung/was-ist-pair-programming/)
+  22. [Chat GPT](https://chat.openai.com/)
+    - **Autor:** Nicht angegeben
+    - **Veröffentlichungsdatum:** Nicht anwendbar
+    - **Abrufdatum:** 19. Oktober 2023
+
+  23. [LinkedIn - Root Cause Analysis You Must Know](https://www.linkedin.com/pulse/all-rcaroot-cause-analysis-you-must-know-dhirendra-patel)
+    - **Autor:** Dhirendra Patel
+    - **Veröffentlichungsdatum:** 30. Dez. 2022
+    - **Abrufdatum:** 19. Oktober 2023
+
+  24. [Testsigma - Difference Between Testing and Debugging](https://testsigma.com/blog/difference-between-testing-and-debugging/#Difference_Between_Testing_and_Debugging)
+    - **Autor:** Kiruthika Devaraj
+    - **Veröffentlichungsdatum:** July 15, 2023
+    - **Abrufdatum:** 19. Oktober 2023
+
+  25. [Rubber Duck Debugging](https://rubberduckdebugging.com/)
     - **Autor:** Nicht angegeben
     - **Veröffentlichungsdatum:** Nicht angegeben
     - **Abrufdatum:** 19. Oktober 2023
 
-15. [T2Informatik - Pair Programming](https://t2informatik.de/wissen-kompakt/pair-programming/)
+  26. [Undo - 6 Things About Time-Travel Debugging](https://undo.io/resources/6-things-time-travel-debugging#:~:text=Time%20travel%20debugging%20(aka%20reverse,to%20inspect%20the%20program%20state.)
     - **Autor:** Nicht angegeben
     - **Veröffentlichungsdatum:** Nicht angegeben
     - **Abrufdatum:** 19. Oktober 2023
 
-16. [Duckly - 7 Tips for Successful Pair Programming](https://duckly.com/blog/7-tips-for-successful-pair-programming/)
-    - **Autor:** Jfromtheblock
-    - **Veröffentlichungsdatum:** 17 SEPTEMBER 2021
+  27. [Coralogix - Tracing vs. Logging: What to Know](https://coralogix.com/blog/tracing-vs-logging-what-to-know/)
+    - **Autor:** Tobias Schlichtmeier
+    - **Veröffentlichungsdatum:** 14. Mai 2021
     - **Abrufdatum:** 19. Oktober 2023
 
-17. [GitLab - What Is Code Review?](https://about.gitlab.com/topics/version-control/what-is-code-review/)
+  28. [Elektroniknet - Vier Tools im Check](https://www.elektroniknet.de/embedded/entwicklungstools/vier-tools-im-check.186375.html)
     - **Autor:** Nicht angegeben
     - **Veröffentlichungsdatum:** Nicht angegeben
     - **Abrufdatum:** 19. Oktober 2023
 
-18. [dev.to - Enhancing Code Reviews With Conventional Comments](https://dev.to/tsotsi1/enhancing-code-reviews-with-conventional-comments-2j9i)
-    - **Autor:** TSOTSI1
-    - **Veröffentlichungsdatum:** 12. Juni .2023
-    - **Abrufdatum:** 19. Oktober 2023
+  29. [Guru99 - Agile Testing: A Beginner's Guide](https://www.guru99.com/agile-testing-a-beginner-s-guide.html)
+      - **Autor:** Thomas Hamilton
+      - **Veröffentlichungsdatum:** October 7, 2023
+      - **Abrufdatum:** 19. Oktober 2023
 
-19. [Swarmia - A Complete Guide to Code Reviews](https://www.swarmia.com/blog/a-complete-guide-to-code-reviews/?utm_term=code%20review%20best%20practices&utm_campaign=SRH-REVIEW-EU-EN&utm_source=adwords&utm_medium=ppc&hsa_acc=6644081770&hsa_cam=16463390785&hsa_grp=134848023275&hsa_ad=585675515692&hsa_src=g&hsa_tgt=kwd-298072696942&hsa_kw=code%20review%20best%20practices&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjwp8OpBhAFEiwAG7NaEhy7Gvy4r35tivXyYYrIs0-WQrkUQggqz3NcB2demdyWZ-7DKr0g3RoCY8sQAvD_BwE#best-practices-for-code-reviews
-    - **Autor:** Kimmo Brunfeldt
-    - **Veröffentlichungsdatum:** Oct 12, 2021
-    - **Abrufdatum:** 19. Oktober 2023
+  30. [BrowserStack - TDD vs. BDD vs. ATDD](https://www.browserstack.com/guide/tdd-vs-bdd-vs-atdd)
+      - **Autor:** Jash Unadkat
+      - **Veröffentlichungsdatum:** June 15, 2023
+      - **Abrufdatum:** 19. Oktober 2023
 
-20. [Refactoring - refactoring.com](https://refactoring.com/)
-    - **Autor:** Nicht angegeben
-    - **Veröffentlichungsdatum:** Nicht angegeben
-    - **Abrufdatum:** 19. Oktober 2023
+  31. [LinkedIn - How Do You Use Test Doubles, Mocks, Stubs?](https://www.linkedin.com/advice/3/how-do-you-use-test-doubles-mocks-stubs)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
 
-21. [Refactoring Guru - Extract Method](https://refactoring.guru/extract-method)
-    - **Autor:** Nicht angegeben
-    - **Veröffentlichungsdatum:** Nicht angegeben
-    - **Abrufdatum:** 19. Oktober 2023
+  32. [Jesus Valera Reales - Testing With Test Doubles](https://jesusvalerareales.com/testing-with-test-doubles/#:~:text=The%20five%20types%20of%20Test,how%20it%20will%20be%20used.)
+      - **Autor:** Jesus Valera Reales
+      - **Veröffentlichungsdatum:** June 11, 2020
+      - **Abrufdatum:** 19. Oktober 2023
 
-22. [Refactoring Guru - Extract Variable](https://refactoring.guru/extract-variable)
-    - **Autor:** Nicht angegeben
-    - **Veröffentlichungsdatum:** Nicht angegeben
-    - **Abrufdatum:** 19. Oktober 2023
+  33. [it-agile - Was ist Pair Programming?](https://www.it-agile.de/agiles-wissen/agile-entwicklung/was-ist-pair-programming/)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
 
-23. [Refactoring Guru - Inline Method](https://refactoring.guru/inline-method)
-    - **Autor:** Nicht angegeben
-    - **Veröffentlichungsdatum:** Nicht angegeben
-    - **Abrufdatum:** 19. Oktober 2023
+  34. [T2Informatik - Pair Programming](https://t2informatik.de/wissen-kompakt/pair-programming/)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
 
-24. [BrowserStack - Best Test Automation Frameworks](https://www.browserstack.com/guide/best-test-automation-frameworks)
-    - **Autor:** GH and Akshay Badkar
-    - **Veröffentlichungsdatum:** August 27, 2023
-    - **Abrufdatum:** 19. Oktober 2023
+  35. [Duckly - 7 Tips for Successful Pair Programming](https://duckly.com/blog/7-tips-for-successful-pair-programming/)
+      - **Autor:** Jfromtheblock
+      - **Veröffentlichungsdatum:** 17 SEPTEMBER 2021
+      - **Abrufdatum:** 19. Oktober 2023
 
-25. [BrowserStack - Build Tools](https://www.browserstack.com/guide/build-tools)
-    - **Autor:** Somosree Roy
-    - **Veröffentlichungsdatum:** July 27, 2023
-    - **Abrufdatum:** 19. Oktober 2023
+  36. [GitLab - What Is Code Review?](https://about.gitlab.com/topics/version-control/what-is-code-review/)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
+
+  37. [dev.to - Enhancing Code Reviews With Conventional Comments](https://dev.to/tsotsi1/enhancing-code-reviews-with-conventional-comments-2j9i)
+      - **Autor:** TSOTSI1
+      - **Veröffentlichungsdatum:** 12. Juni .2023
+      - **Abrufdatum:** 19. Oktober 2023
+
+  38. [Swarmia - A Complete Guide to Code Reviews](https://www.swarmia.com/blog/a-complete-guide-to-code-reviews/?utm_term=code%20review%20best%20practices&utm_campaign=SRH-REVIEW-EU-EN&utm_source=adwords&utm_medium=ppc&hsa_acc=6644081770&hsa_cam=16463390785&hsa_grp=134848023275&hsa_ad=585675515692&hsa_src=g&hsa_tgt=kwd-298072696942&hsa_kw=code%20review%20best%20practices&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjwp8OpBhAFEiwAG7NaEhy7Gvy4r35tivXyYYrIs0-WQrkUQggqz3NcB2demdyWZ-7DKr0g3RoCY8sQAvD_BwE#best-practices-for-code-reviews
+      - **Autor:** Kimmo Brunfeldt
+      - **Veröffentlichungsdatum:** Oct 12, 2021
+      - **Abrufdatum:** 19. Oktober 2023
+
+  39. [Refactoring - refactoring.com](https://refactoring.com/)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
+
+  40. [Refactoring Guru - Extract Method](https://refactoring.guru/extract-method)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
+
+  41. [Refactoring Guru - Extract Variable](https://refactoring.guru/extract-variable)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
+
+  42. [Refactoring Guru - Inline Method](https://refactoring.guru/inline-method)
+      - **Autor:** Nicht angegeben
+      - **Veröffentlichungsdatum:** Nicht angegeben
+      - **Abrufdatum:** 19. Oktober 2023
+
+  43. [BrowserStack - Best Test Automation Frameworks](https://www.browserstack.com/guide/best-test-automation-frameworks)
+      - **Autor:** GH and Akshay Badkar
+      - **Veröffentlichungsdatum:** August 27, 2023
+      - **Abrufdatum:** 19. Oktober 2023
+
+  44. [BrowserStack - Build Tools](https://www.browserstack.com/guide/build-tools)
+      - **Autor:** Somosree Roy
+      - **Veröffentlichungsdatum:** July 27, 2023
+      - **Abrufdatum:** 19. Oktober 2023
 
